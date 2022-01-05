@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TaskManger
+namespace MultiTaskBase
 {
     public partial class RAM : Form
     {

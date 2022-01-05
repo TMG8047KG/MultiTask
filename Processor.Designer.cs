@@ -1,5 +1,5 @@
 ﻿
-namespace TaskManger
+namespace MultiTaskBase
 {
     partial class Processor
     {
@@ -54,6 +54,7 @@ namespace TaskManger
             chartArea1.AxisX.MajorTickMark.Enabled = false;
             chartArea1.AxisY.MajorTickMark.Enabled = false;
             chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.MaximumAutoSize = 50F;
             chartArea1.AxisY.Minimum = 0D;
             chartArea1.Name = "ChartArea1";
             this.cpuChart.ChartAreas.Add(chartArea1);
@@ -70,7 +71,6 @@ namespace TaskManger
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(193)))), ((int)(((byte)(201)))));
             series1.Legend = "Legend1";
             series1.Name = "CPU Usage";
-            series1.YValuesPerPoint = 2;
             this.cpuChart.Series.Add(series1);
             this.cpuChart.Size = new System.Drawing.Size(800, 331);
             this.cpuChart.TabIndex = 0;

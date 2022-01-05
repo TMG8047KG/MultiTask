@@ -1,5 +1,5 @@
 ﻿
-namespace TaskManger
+namespace MultiTaskBase
 {
     partial class ProjectInstaller
     {

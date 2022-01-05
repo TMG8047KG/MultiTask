@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace TaskManger
+namespace MultiTaskBase
 {
     public partial class Running_Apps : Form
     {

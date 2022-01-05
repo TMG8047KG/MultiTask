@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace TaskManger
+namespace MultiTaskBase
 {
     public partial class MultiTask : Form
     {

@@ -1,0 +1,13 @@
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\MultiTask.exe.config
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\MultiTask.exe
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\MultiTask.pdb
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.MultiTask.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.RAM.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Processor.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.ProjectInstaller.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Properties.Resources.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Running_Apps.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.GenerateResource.cache
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.CoreCompileInputs.cache
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.exe
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.pdb
