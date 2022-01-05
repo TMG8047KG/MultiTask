@@ -29,6 +29,7 @@ namespace TaskManger
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTask));
             this.basePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,7 +39,10 @@ namespace TaskManger
             this.btnRunningApps = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnGit = new System.Windows.Forms.Button();
+            this.lblGitinfo = new System.Windows.Forms.Label();
             this.basePanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,15 +55,17 @@ namespace TaskManger
             this.basePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.basePanel.Location = new System.Drawing.Point(0, 0);
             this.basePanel.Name = "basePanel";
-            this.basePanel.Size = new System.Drawing.Size(211, 600);
+            this.basePanel.Size = new System.Drawing.Size(211, 661);
             this.basePanel.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblGitinfo);
+            this.panel2.Controls.Add(this.btnGit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 547);
+            this.panel2.Location = new System.Drawing.Point(0, 601);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 53);
+            this.panel2.Size = new System.Drawing.Size(211, 60);
             this.panel2.TabIndex = 2;
             // 
             // panel1
@@ -120,6 +126,7 @@ namespace TaskManger
             this.btnActiveT.TabIndex = 1;
             this.btnActiveT.Text = "Active Time";
             this.btnActiveT.UseVisualStyleBackColor = false;
+            this.btnActiveT.Visible = false;
             // 
             // btnRunningApps
             // 
@@ -151,21 +158,47 @@ namespace TaskManger
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(211, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(887, 600);
+            this.mainPanel.Size = new System.Drawing.Size(973, 661);
             this.mainPanel.TabIndex = 2;
+            // 
+            // btnGit
+            // 
+            this.btnGit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGit.FlatAppearance.BorderSize = 0;
+            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGit.Image = ((System.Drawing.Image)(resources.GetObject("btnGit.Image")));
+            this.btnGit.Location = new System.Drawing.Point(0, 0);
+            this.btnGit.Name = "btnGit";
+            this.btnGit.Size = new System.Drawing.Size(60, 60);
+            this.btnGit.TabIndex = 0;
+            this.btnGit.UseVisualStyleBackColor = false;
+            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
+            // 
+            // lblGitinfo
+            // 
+            this.lblGitinfo.AutoSize = true;
+            this.lblGitinfo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblGitinfo.Location = new System.Drawing.Point(66, 22);
+            this.lblGitinfo.Name = "lblGitinfo";
+            this.lblGitinfo.Size = new System.Drawing.Size(103, 16);
+            this.lblGitinfo.TabIndex = 1;
+            this.lblGitinfo.Text = "by TMG8047KG";
             // 
             // MultiTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(212)))));
-            this.ClientSize = new System.Drawing.Size(1098, 600);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.basePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MultiTask";
             this.Text = "MultiTask";
             this.Load += new System.EventHandler(this.MultiTask_Load);
             this.basePanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -181,6 +214,8 @@ namespace TaskManger
         private System.Windows.Forms.Button btnActiveT;
         private System.Windows.Forms.Button btnCPU;
         private System.Windows.Forms.Button btnMem;
+        private System.Windows.Forms.Button btnGit;
+        private System.Windows.Forms.Label lblGitinfo;
     }
 }
 

@@ -52,5 +52,10 @@ namespace TaskManger
         {
             load_Form(new RAM());
         }
+
+        private void btnGit_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/TMG8047KG/MultiTask");
+        }
     }
 }
