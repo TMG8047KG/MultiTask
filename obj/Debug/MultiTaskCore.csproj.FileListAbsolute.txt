@@ -11,3 +11,4 @@ C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.Ge
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.CoreCompileInputs.cache
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.exe
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.pdb
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.AssemblyReference.cache

@@ -19,6 +19,11 @@ namespace MultiTaskBase
 
         private void Processor_Load(object sender, EventArgs e)
         {
+            CPU_tick.Start();
+        }
+
+        private void CPU_tick_Tick(object sender, EventArgs e)
+        {
             float CPU = perfCPU.NextValue();
             cpuChart.Series["CPU Usage"].Points.AddY(CPU);
         }
