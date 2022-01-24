@@ -29,6 +29,7 @@ namespace MultiTaskBase
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTask));
             this.basePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@ namespace MultiTaskBase
             this.btnRunningApps = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.basePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -189,6 +191,13 @@ namespace MultiTaskBase
             this.mainPanel.Size = new System.Drawing.Size(984, 661);
             this.mainPanel.TabIndex = 2;
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "MultiTask";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
             // MultiTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +211,7 @@ namespace MultiTaskBase
             this.Name = "MultiTask";
             this.Text = "MultiTask";
             this.Load += new System.EventHandler(this.MultiTask_Load);
+            this.Resize += new System.EventHandler(this.MultiTask_Resize);
             this.basePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -222,6 +232,7 @@ namespace MultiTaskBase
         private System.Windows.Forms.Button btnMem;
         private System.Windows.Forms.Button btnGit;
         private System.Windows.Forms.Label lblGitinfo;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

@@ -21,7 +21,7 @@ namespace MultiTaskBase
 
         private void MultiTask_Load(object sender, EventArgs e)
         {
-            //hi
+            notifyIcon.Visible = true;
         }
 
         public void load_Form(object Form)
@@ -56,6 +56,21 @@ namespace MultiTaskBase
         private void btnGit_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/TMG8047KG/MultiTask");
+        }
+
+        private void MultiTask_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowInTaskbar = false;
+            }
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInTaskbar = true;
+
+            WindowState = FormWindowState.Normal;
         }
     }
 }

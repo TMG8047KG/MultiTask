@@ -12,3 +12,6 @@ C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.Co
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.exe
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTask.pdb
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.AssemblyReference.cache
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\System.CodeDom.dll
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\System.CodeDom.xml
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.CopyComplete
