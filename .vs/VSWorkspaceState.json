@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Properties"
   ],
-  "SelectedNode": "\\Processor.cs",
+  "SelectedNode": "\\Main.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.Devices;
 using System.Management;
 
 namespace MultiTaskBase
@@ -34,14 +32,14 @@ namespace MultiTaskBase
             {
                 
             }
-            var RAMinfo = new Microsoft.VisualBasic.Devices.ComputerInfo();
+            //var RAMinfo = new Microsoft.VisualBasic.Devices.ComputerInfo();
             float memory = perfMem.NextValue();
-            ulong UsedRAM = RAMinfo.TotalPhysicalMemory - RAMinfo.AvailablePhysicalMemory;
+            //ulong UsedRAM = RAMinfo.TotalPhysicalMemory - RAMinfo.AvailablePhysicalMemory;
             double ByteToGb = Math.Pow(1024, 3) + 0.5;
 
-            lblUsedRAM.Text = "Used Memory\n" + string.Format("{0:0.0} GB", UsedRAM/ByteToGb);
-            lblPhysicalRAM.Text = "Total Memory\n" + string.Format("{0:0.0} GB", (RAMinfo.TotalPhysicalMemory/ByteToGb)) + " " + string.Format("{0:0.0} GB", Math.Round(RAMinfo.TotalPhysicalMemory / ByteToGb));
-            lblAvaliableRAM.Text = "Available Memory\n" + string.Format("{0:0.0} GB", (RAMinfo.AvailablePhysicalMemory / ByteToGb));
+            //lblUsedRAM.Text = "Used Memory\n" + string.Format("{0:0.0} GB", UsedRAM/ByteToGb);
+            //lblPhysicalRAM.Text = "Total Memory\n" + string.Format("{0:0.0} GB", (RAMinfo.TotalPhysicalMemory/ByteToGb)) + " " + string.Format("{0:0.0} GB", Math.Round(RAMinfo.TotalPhysicalMemory / ByteToGb));
+            //lblAvaliableRAM.Text = "Available Memory\n" + string.Format("{0:0.0} GB", (RAMinfo.AvailablePhysicalMemory / ByteToGb));
             MemChart.Series["Memory Usage"].Points.AddY(memory);
         }
     }

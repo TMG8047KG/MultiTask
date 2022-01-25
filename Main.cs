@@ -72,5 +72,15 @@ namespace MultiTaskBase
 
             WindowState = FormWindowState.Normal;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }

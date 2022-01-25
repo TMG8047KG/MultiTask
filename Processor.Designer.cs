@@ -30,9 +30,9 @@ namespace MultiTaskBase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.perfCPU = new System.Diagnostics.PerformanceCounter();
             this.cpuChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CPU_tick = new System.Windows.Forms.Timer(this.components);
@@ -58,35 +58,34 @@ namespace MultiTaskBase
             // 
             // cpuChart
             // 
-            this.cpuChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(212)))));
+            this.cpuChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.cpuChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.AxisX.IsMarginVisible = false;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.MajorTickMark.Enabled = false;
-            chartArea2.AxisY.Maximum = 100D;
-            chartArea2.AxisY.MaximumAutoSize = 50F;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.BorderWidth = 2;
-            chartArea2.Name = "ChartArea1";
-            this.cpuChart.ChartAreas.Add(chartArea2);
-            this.cpuChart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cpuChart.Location = new System.Drawing.Point(0, 0);
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.MajorTickMark.Enabled = false;
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.MaximumAutoSize = 50F;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.BorderWidth = 2;
+            chartArea1.Name = "ChartArea1";
+            this.cpuChart.ChartAreas.Add(chartArea1);
+            this.cpuChart.Location = new System.Drawing.Point(21, 1);
             this.cpuChart.Name = "cpuChart";
-            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(162)))), ((int)(((byte)(173)))));
-            series2.BorderWidth = 4;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(193)))), ((int)(((byte)(201)))));
-            series2.Name = "CPU Usage";
-            this.cpuChart.Series.Add(series2);
-            this.cpuChart.Size = new System.Drawing.Size(984, 331);
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(162)))), ((int)(((byte)(173)))));
+            series1.BorderWidth = 4;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(193)))), ((int)(((byte)(201)))));
+            series1.Name = "CPU Usage";
+            this.cpuChart.Series.Add(series1);
+            this.cpuChart.Size = new System.Drawing.Size(685, 331);
             this.cpuChart.TabIndex = 0;
             this.cpuChart.Text = "CPU Usage";
-            title2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "CPU Usage";
-            title2.Text = "CPU Usage";
-            this.cpuChart.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "CPU Usage";
+            title1.Text = "CPU Usage";
+            this.cpuChart.Titles.Add(title1);
             // 
             // CPU_tick
             // 
@@ -187,7 +186,7 @@ namespace MultiTaskBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(212)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.lblCPUcores);
             this.Controls.Add(this.lblCPUspeed);

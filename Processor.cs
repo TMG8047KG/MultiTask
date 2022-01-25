@@ -21,8 +21,13 @@ namespace MultiTaskBase
         private void Processor_Load(object sender, EventArgs e)
         {
             CPU_tick.Start();
-            //GetComponet("Processor's Name\n", lblCPUname, "Win32_Processor", "Name");
-            //GetComponet("Cores\n", lblCPUcores, "Win32_Processor", "NumberOfCores");
+            ManagementObjectSearcher mosuc = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+            foreach(ManagementObject obj in mosuc.Get())
+            {
+                lblCPUname.Text = "Processor's Name\n" + obj["Name"];
+                lblCPUcores.Text = "Cores\n" + obj["NumberOfCores"];
+                lblCPUspeed.Text = "Speed\n" + obj["CurrentClockSpeed"];
+            }
         }
 
         //private void GetComponet(string text, Label lable, string win_class, string syntax)
@@ -36,11 +41,16 @@ namespace MultiTaskBase
 
         private void CPU_tick_Tick(object sender, EventArgs e)
         {
-            //GetComponet("Status", lblStatus, "Win32_Processor", "CpuStatus");
-            //GetComponet("Persent Used", lblCPUpersent , "Win32_Processor", "LoadPercentage");
-            //GetComponet("Current Speed", lblCPUspeed, "Win32_Processor", "CurrentClockSpeed");
-            //GetComponet("Threads", lblTreads, "Win32_Processor", "ThreadCount");
-            float CPU = perfCPU.NextValue();
+            //ManagementObjectSearcher mosc = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+            //foreach (ManagementObject obj in mosc.Get())
+            //{
+
+            //}
+                //GetComponet("Status", lblStatus, "Win32_Processor", "CpuStatus");
+                //GetComponet("Persent Used", lblCPUpersent , "Win32_Processor", "LoadPercentage");
+                //GetComponet("Current Speed", lblCPUspeed, "Win32_Processor", "CurrentClockSpeed");
+                //GetComponet("Threads", lblTreads, "Win32_Processor", "ThreadCount");
+                float CPU = perfCPU.NextValue();
             cpuChart.Series["CPU Usage"].Points.AddY(CPU);
             
         }
