@@ -18,6 +18,9 @@ namespace MultiTaskBase
             InitializeComponent();
         }
 
+        private bool dragging;
+        private Point st_point = new Point(0, 0);
+
 
         private void MultiTask_Load(object sender, EventArgs e)
         {
@@ -81,6 +84,26 @@ namespace MultiTaskBase
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void FnBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            st_point = new Point(e.X, e.Y);
+        }
+
+        private void FnBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point point = PointToScreen(e.Location);
+                Location = new Point(point.X - this.st_point.X, point.Y - this.st_point.Y);
+            }
+        }
+
+        private void FnBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
         }
     }
 }

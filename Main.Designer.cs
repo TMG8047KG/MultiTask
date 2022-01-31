@@ -42,7 +42,7 @@ namespace MultiTaskBase
             this.btnGit = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.FnBar = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@ namespace MultiTaskBase
             this.basePanel.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.FnBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,16 +198,19 @@ namespace MultiTaskBase
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
-            // panel3
+            // FnBar
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.btnMinimize);
-            this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(200, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 40);
-            this.panel3.TabIndex = 3;
+            this.FnBar.Controls.Add(this.pictureBox1);
+            this.FnBar.Controls.Add(this.btnMinimize);
+            this.FnBar.Controls.Add(this.btnExit);
+            this.FnBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FnBar.Location = new System.Drawing.Point(200, 0);
+            this.FnBar.Name = "FnBar";
+            this.FnBar.Size = new System.Drawing.Size(1000, 40);
+            this.FnBar.TabIndex = 3;
+            this.FnBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
+            this.FnBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
+            this.FnBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
             // 
             // pictureBox1
             // 
@@ -270,12 +273,13 @@ namespace MultiTaskBase
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.FnBar);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.basePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MultiTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MultiTask";
             this.Load += new System.EventHandler(this.MultiTask_Load);
             this.Resize += new System.EventHandler(this.MultiTask_Resize);
@@ -283,7 +287,7 @@ namespace MultiTaskBase
             this.pButtons.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.FnBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -301,7 +305,7 @@ namespace MultiTaskBase
         private System.Windows.Forms.Button btnGit;
         private System.Windows.Forms.Label lblGitinfo;
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel FnBar;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Panel pButtons;

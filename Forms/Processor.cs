@@ -46,13 +46,13 @@ namespace MultiTaskBase
             //{
 
             //}
-                //GetComponet("Status", lblStatus, "Win32_Processor", "CpuStatus");
-                //GetComponet("Persent Used", lblCPUpersent , "Win32_Processor", "LoadPercentage");
-                //GetComponet("Current Speed", lblCPUspeed, "Win32_Processor", "CurrentClockSpeed");
-                //GetComponet("Threads", lblTreads, "Win32_Processor", "ThreadCount");
-                float CPU = perfCPU.NextValue();
-            cpuChart.Series["CPU Usage"].Points.AddY(CPU);
-            
+            //GetComponet("Status", lblStatus, "Win32_Processor", "CpuStatus");
+            //GetComponet("Persent Used", lblCPUpersent , "Win32_Processor", "LoadPercentage");
+            //GetComponet("Current Speed", lblCPUspeed, "Win32_Processor", "CurrentClockSpeed");
+            //GetComponet("Threads", lblTreads, "Win32_Processor", "ThreadCount");
+            float CPU = perfCPU.NextValue();
+            //cpuChart.Series["CPU Usage"].Points.AddY(CPU);
+
         }
     }
 }

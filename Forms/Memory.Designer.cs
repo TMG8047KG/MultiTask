@@ -33,29 +33,24 @@ namespace MultiTaskBase
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.perfMem = new System.Diagnostics.PerformanceCounter();
             this.RAM_tick = new System.Windows.Forms.Timer(this.components);
             this.MemChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblAvaliableRAM = new System.Windows.Forms.Label();
-            this.lblUsedRAM = new System.Windows.Forms.Label();
             this.lblPhysicalRAM = new System.Windows.Forms.Label();
-            this.lblSSS = new System.Windows.Forms.Label();
-            this.lblPresentUsed = new System.Windows.Forms.Label();
-            this.perfAvailableRAM = new System.Diagnostics.PerformanceCounter();
-            ((System.ComponentModel.ISupportInitialize)(this.perfMem)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblFormFactor = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUsedRAM = new System.Windows.Forms.Label();
+            this.lblAvaliableRAM = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.MemChart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.perfAvailableRAM)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // perfMem
-            // 
-            this.perfMem.CategoryName = "Memory";
-            this.perfMem.CounterName = "% Committed Bytes In Use";
             // 
             // RAM_tick
             // 
@@ -64,62 +59,49 @@ namespace MultiTaskBase
             // 
             // MemChart
             // 
-            this.MemChart.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
             this.MemChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.MemChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MemChart.BorderlineColor = System.Drawing.Color.Transparent;
             this.MemChart.BorderlineWidth = 0;
             this.MemChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.MemChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             this.MemChart.BorderSkin.BorderColor = System.Drawing.Color.Empty;
             this.MemChart.BorderSkin.BorderWidth = 0;
             chartArea1.AxisX.IsMarginVisible = false;
-            chartArea1.AxisX.LineWidth = 0;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.MaximumAutoSize = 100F;
-            chartArea1.AxisY.IsMarginVisible = false;
-            chartArea1.AxisY.LineWidth = 0;
-            chartArea1.AxisY.MajorTickMark.Enabled = false;
-            chartArea1.AxisY.Maximum = 100D;
-            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
             chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            chartArea1.BorderWidth = 0;
             chartArea1.Name = "ChartArea1";
             this.MemChart.ChartAreas.Add(chartArea1);
-            this.MemChart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MemChart.IsSoftShadows = false;
+            this.MemChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MemChart.Location = new System.Drawing.Point(0, 0);
-            this.MemChart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MemChart.Name = "MemChart";
             this.MemChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(38)))), ((int)(((byte)(115)))));
-            series1.BorderWidth = 4;
+            series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(49)))), ((int)(((byte)(155)))));
-            series1.CustomProperties = "EmptyPointValue=Zero, LabelStyle=Center";
-            series1.IsXValueIndexed = true;
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(162)))), ((int)(((byte)(173)))));
-            series1.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(38)))), ((int)(((byte)(189)))));
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(13)))), ((int)(((byte)(38)))));
             series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(26)))), ((int)(((byte)(76)))));
             series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Memory Usage";
+            series1.Name = "memory";
+            series1.ToolTip = "#VAL{In use}";
             this.MemChart.Series.Add(series1);
-            this.MemChart.Size = new System.Drawing.Size(1000, 293);
+            this.MemChart.Size = new System.Drawing.Size(1000, 336);
             this.MemChart.TabIndex = 0;
             this.MemChart.Text = "Memory Usage";
-            this.MemChart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
-            title1.BorderWidth = 0;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title1.Name = "Title1";
-            title1.Text = "Memory";
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.IsDockedInsideChartArea = false;
+            title1.Name = "Total_memory";
             this.MemChart.Titles.Add(title1);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.MemChart);
+            this.panel1.Controls.Add(this.lblPhysicalRAM);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -128,14 +110,20 @@ namespace MultiTaskBase
             this.panel1.Size = new System.Drawing.Size(1000, 660);
             this.panel1.TabIndex = 2;
             // 
+            // lblPhysicalRAM
+            // 
+            this.lblPhysicalRAM.AutoSize = true;
+            this.lblPhysicalRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPhysicalRAM.Location = new System.Drawing.Point(704, 275);
+            this.lblPhysicalRAM.Name = "lblPhysicalRAM";
+            this.lblPhysicalRAM.Size = new System.Drawing.Size(110, 19);
+            this.lblPhysicalRAM.TabIndex = 4;
+            this.lblPhysicalRAM.Text = "PhysicalRAM";
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.lblAvaliableRAM);
-            this.panel2.Controls.Add(this.lblUsedRAM);
-            this.panel2.Controls.Add(this.lblPhysicalRAM);
-            this.panel2.Controls.Add(this.lblSSS);
-            this.panel2.Controls.Add(this.lblPresentUsed);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 336);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -143,69 +131,78 @@ namespace MultiTaskBase
             this.panel2.Size = new System.Drawing.Size(1000, 324);
             this.panel2.TabIndex = 3;
             // 
-            // panel5
+            // panel4
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(38)))), ((int)(((byte)(115)))));
-            this.panel5.Location = new System.Drawing.Point(20, 34);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 55);
-            this.panel5.TabIndex = 7;
+            this.panel4.Controls.Add(this.lblFormFactor);
+            this.panel4.Controls.Add(this.lblSpeed);
+            this.panel4.Location = new System.Drawing.Point(305, 17);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(236, 295);
+            this.panel4.TabIndex = 11;
             // 
-            // lblAvaliableRAM
+            // lblFormFactor
             // 
-            this.lblAvaliableRAM.AutoSize = true;
-            this.lblAvaliableRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblAvaliableRAM.Location = new System.Drawing.Point(470, 26);
-            this.lblAvaliableRAM.Name = "lblAvaliableRAM";
-            this.lblAvaliableRAM.Size = new System.Drawing.Size(113, 19);
-            this.lblAvaliableRAM.TabIndex = 2;
-            this.lblAvaliableRAM.Text = "AvaliableRAM";
+            this.lblFormFactor.AutoSize = true;
+            this.lblFormFactor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFormFactor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblFormFactor.Location = new System.Drawing.Point(0, 19);
+            this.lblFormFactor.Name = "lblFormFactor";
+            this.lblFormFactor.Size = new System.Drawing.Size(102, 19);
+            this.lblFormFactor.TabIndex = 9;
+            this.lblFormFactor.Text = "Form Factor";
+            // 
+            // lblSpeed
+            // 
+            this.lblSpeed.AutoSize = true;
+            this.lblSpeed.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSpeed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSpeed.Location = new System.Drawing.Point(0, 0);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(58, 19);
+            this.lblSpeed.TabIndex = 8;
+            this.lblSpeed.Text = "Speed";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblUsedRAM);
+            this.panel3.Controls.Add(this.lblAvaliableRAM);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Location = new System.Drawing.Point(12, 17);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(277, 50);
+            this.panel3.TabIndex = 8;
             // 
             // lblUsedRAM
             // 
             this.lblUsedRAM.AutoSize = true;
+            this.lblUsedRAM.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblUsedRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUsedRAM.Location = new System.Drawing.Point(51, 26);
+            this.lblUsedRAM.Location = new System.Drawing.Point(5, 0);
             this.lblUsedRAM.Name = "lblUsedRAM";
-            this.lblUsedRAM.Size = new System.Drawing.Size(85, 19);
-            this.lblUsedRAM.TabIndex = 6;
-            this.lblUsedRAM.Text = "UsedRAM";
+            this.lblUsedRAM.Size = new System.Drawing.Size(114, 19);
+            this.lblUsedRAM.TabIndex = 1;
+            this.lblUsedRAM.Text = "Used Memory\r\n";
             // 
-            // lblPhysicalRAM
+            // lblAvaliableRAM
             // 
-            this.lblPhysicalRAM.AutoSize = true;
-            this.lblPhysicalRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPhysicalRAM.Location = new System.Drawing.Point(274, 26);
-            this.lblPhysicalRAM.Name = "lblPhysicalRAM";
-            this.lblPhysicalRAM.Size = new System.Drawing.Size(110, 19);
-            this.lblPhysicalRAM.TabIndex = 4;
-            this.lblPhysicalRAM.Text = "PhysicalRAM";
+            this.lblAvaliableRAM.AutoSize = true;
+            this.lblAvaliableRAM.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblAvaliableRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblAvaliableRAM.Location = new System.Drawing.Point(135, 0);
+            this.lblAvaliableRAM.Name = "lblAvaliableRAM";
+            this.lblAvaliableRAM.Size = new System.Drawing.Size(142, 19);
+            this.lblAvaliableRAM.TabIndex = 2;
+            this.lblAvaliableRAM.Text = "Avaliable Memory\r\n";
             // 
-            // lblSSS
+            // panel5
             // 
-            this.lblSSS.AutoSize = true;
-            this.lblSSS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblSSS.Location = new System.Drawing.Point(38, 166);
-            this.lblSSS.Name = "lblSSS";
-            this.lblSSS.Size = new System.Drawing.Size(50, 19);
-            this.lblSSS.TabIndex = 5;
-            this.lblSSS.Text = "Soon";
-            // 
-            // lblPresentUsed
-            // 
-            this.lblPresentUsed.AutoSize = true;
-            this.lblPresentUsed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPresentUsed.Location = new System.Drawing.Point(38, 222);
-            this.lblPresentUsed.Name = "lblPresentUsed";
-            this.lblPresentUsed.Size = new System.Drawing.Size(50, 19);
-            this.lblPresentUsed.TabIndex = 3;
-            this.lblPresentUsed.Text = "Soon";
-            // 
-            // perfAvailableRAM
-            // 
-            this.perfAvailableRAM.CategoryName = "Memory";
-            this.perfAvailableRAM.CounterName = "Available MBytes";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(49)))), ((int)(((byte)(155)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 50);
+            this.panel5.TabIndex = 7;
             // 
             // RAM
             // 
@@ -220,29 +217,30 @@ namespace MultiTaskBase
             this.Name = "RAM";
             this.Text = "Memory";
             this.Load += new System.EventHandler(this.Memory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.perfMem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MemChart)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.perfAvailableRAM)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Diagnostics.PerformanceCounter perfMem;
         private System.Windows.Forms.Timer RAM_tick;
         private System.Windows.Forms.DataVisualization.Charting.Chart MemChart;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAvaliableRAM;
-        private System.Windows.Forms.Label lblSSS;
         private System.Windows.Forms.Label lblPhysicalRAM;
-        private System.Windows.Forms.Label lblPresentUsed;
-        private System.Diagnostics.PerformanceCounter perfAvailableRAM;
         private System.Windows.Forms.Label lblUsedRAM;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblSpeed;
+        private System.Windows.Forms.Label lblFormFactor;
+        private System.Windows.Forms.Panel panel4;
     }
 }

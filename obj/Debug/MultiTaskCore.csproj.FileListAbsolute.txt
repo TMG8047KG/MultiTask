@@ -15,3 +15,5 @@ C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\System.CodeDom.dll
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\System.CodeDom.xml
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.CopyComplete
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Properties.Resources.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\Topshelf.dll
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\Topshelf.xml
