@@ -86,7 +86,7 @@ namespace MultiTaskBase
             this.btnCPU.FlatAppearance.BorderSize = 0;
             this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCPU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(85)))), ((int)(((byte)(130)))));
+            this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCPU.ImageKey = "(none)";
             this.btnCPU.Location = new System.Drawing.Point(0, 180);
@@ -105,7 +105,7 @@ namespace MultiTaskBase
             this.btnRunningApps.FlatAppearance.BorderSize = 0;
             this.btnRunningApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunningApps.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(85)))), ((int)(((byte)(130)))));
+            this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnRunningApps.Location = new System.Drawing.Point(0, 120);
             this.btnRunningApps.Name = "btnRunningApps";
             this.btnRunningApps.Size = new System.Drawing.Size(200, 60);
@@ -121,7 +121,7 @@ namespace MultiTaskBase
             this.btnMem.FlatAppearance.BorderSize = 0;
             this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(85)))), ((int)(((byte)(130)))));
+            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnMem.Location = new System.Drawing.Point(0, 60);
             this.btnMem.Name = "btnMem";
             this.btnMem.Size = new System.Drawing.Size(200, 60);
@@ -137,7 +137,7 @@ namespace MultiTaskBase
             this.btnActiveT.FlatAppearance.BorderSize = 0;
             this.btnActiveT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActiveT.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnActiveT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(85)))), ((int)(((byte)(130)))));
+            this.btnActiveT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnActiveT.Location = new System.Drawing.Point(0, 0);
             this.btnActiveT.Name = "btnActiveT";
             this.btnActiveT.Size = new System.Drawing.Size(200, 60);
@@ -282,7 +282,6 @@ namespace MultiTaskBase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MultiTask";
             this.Load += new System.EventHandler(this.MultiTask_Load);
-            this.Resize += new System.EventHandler(this.MultiTask_Resize);
             this.basePanel.ResumeLayout(false);
             this.pButtons.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
+using System.Diagnostics;
 
 namespace MultiTaskBase
 {
     public partial class Processor : Form
     {
+        PerformanceCounter cpuCounter;
+
+        int L1, L2, L3;
+
         public Processor()
         {
             InitializeComponent();
@@ -21,38 +26,25 @@ namespace MultiTaskBase
         private void Processor_Load(object sender, EventArgs e)
         {
             CPU_tick.Start();
+            cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+
             ManagementObjectSearcher mosuc = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
             foreach(ManagementObject obj in mosuc.Get())
             {
-                lblCPUname.Text = "Processor's Name\n" + obj["Name"];
-                lblCPUcores.Text = "Cores\n" + obj["NumberOfCores"];
-                lblCPUspeed.Text = "Speed\n" + obj["CurrentClockSpeed"];
+                ProcChart.Titles[0].Text = "" + obj["Name"];
+                lblCores.Text = "Cores:\n" + obj["NumberOfCores"];
+                lblLogicalProcs.Text = "Logical Processors:\n" + obj["NumberOfLogicalProcessors"];
+                lblBaseSpeed.Text = "Base Speed:\n" + obj["CurrentClockSpeed"];
+                L2 = Convert.ToInt32(obj["L2CacheSize"]);
+                L3 = Convert.ToInt32(obj["L3CacheSize"]); 
             }
+            lblL2cache.Text = "L2 Cache:\n" + string.Format("{0:0.0} MB", L2 / 0.5);
+            lblL3cache.Text = "L3 Cache:\n" + string.Format("{0:0.0} MB", L3 / 0.5);
         }
-
-        //private void GetComponet(string text, Label lable, string win_class, string syntax)
-        //{
-        //    ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + win_class);
-        //    foreach(ManagementObject mobj in mos.Get())
-        //    {
-        //        lable.Text = text + Convert.ToString(mobj[syntax]);
-        //    }
-        //}
 
         private void CPU_tick_Tick(object sender, EventArgs e)
         {
-            //ManagementObjectSearcher mosc = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
-            //foreach (ManagementObject obj in mosc.Get())
-            //{
-
-            //}
-            //GetComponet("Status", lblStatus, "Win32_Processor", "CpuStatus");
-            //GetComponet("Persent Used", lblCPUpersent , "Win32_Processor", "LoadPercentage");
-            //GetComponet("Current Speed", lblCPUspeed, "Win32_Processor", "CurrentClockSpeed");
-            //GetComponet("Threads", lblTreads, "Win32_Processor", "ThreadCount");
-            float CPU = perfCPU.NextValue();
-            //cpuChart.Series["CPU Usage"].Points.AddY(CPU);
-
+            ProcChart.Series[0].Points.AddY(cpuCounter.NextValue());
         }
     }
 }

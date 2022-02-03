@@ -30,9 +30,9 @@ namespace MultiTaskBase
         private void InitializeComponent()
         {
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.btnStopProc = new System.Windows.Forms.Button();
             this.procName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStopProc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@ namespace MultiTaskBase
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.AllowUserToResizeColumns = false;
             this.dataGrid.AllowUserToResizeRows = false;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(219)))), ((int)(((byte)(217)))));
+            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -50,36 +50,20 @@ namespace MultiTaskBase
             this.procName,
             this.PID});
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(219)))), ((int)(((byte)(217)))));
+            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
-            this.dataGrid.MaximumSize = new System.Drawing.Size(984, 661);
+            this.dataGrid.MaximumSize = new System.Drawing.Size(1000, 660);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(219)))), ((int)(((byte)(217)))));
+            this.dataGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.dataGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(189)))), ((int)(((byte)(186)))));
-            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGrid.Size = new System.Drawing.Size(984, 661);
+            this.dataGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(38)))), ((int)(((byte)(199)))));
+            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.dataGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(38)))), ((int)(((byte)(199)))));
+            this.dataGrid.Size = new System.Drawing.Size(1000, 660);
             this.dataGrid.TabIndex = 0;
-            // 
-            // btnStopProc
-            // 
-            this.btnStopProc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(69)))), ((int)(((byte)(80)))));
-            this.btnStopProc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnStopProc.FlatAppearance.BorderSize = 0;
-            this.btnStopProc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopProc.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(162)))), ((int)(((byte)(173)))));
-            this.btnStopProc.Location = new System.Drawing.Point(0, 615);
-            this.btnStopProc.Name = "btnStopProc";
-            this.btnStopProc.Size = new System.Drawing.Size(984, 46);
-            this.btnStopProc.TabIndex = 1;
-            this.btnStopProc.Text = "Stop Process";
-            this.btnStopProc.UseVisualStyleBackColor = false;
-            this.btnStopProc.Click += new System.EventHandler(this.btnStopProc_Click);
             // 
             // procName
             // 
@@ -100,11 +84,28 @@ namespace MultiTaskBase
             this.PID.ReadOnly = true;
             this.PID.Width = 142;
             // 
+            // btnStopProc
+            // 
+            this.btnStopProc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnStopProc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnStopProc.FlatAppearance.BorderSize = 0;
+            this.btnStopProc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopProc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnStopProc.Location = new System.Drawing.Point(0, 614);
+            this.btnStopProc.Name = "btnStopProc";
+            this.btnStopProc.Size = new System.Drawing.Size(1000, 46);
+            this.btnStopProc.TabIndex = 1;
+            this.btnStopProc.Text = "Stop Process";
+            this.btnStopProc.UseVisualStyleBackColor = false;
+            this.btnStopProc.Click += new System.EventHandler(this.btnStopProc_Click);
+            // 
             // Running_Apps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(1000, 660);
             this.Controls.Add(this.btnStopProc);
             this.Controls.Add(this.dataGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

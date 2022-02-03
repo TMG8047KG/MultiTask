@@ -18,13 +18,21 @@ namespace MultiTaskBase
             InitializeComponent();
         }
 
+        public ContextMenu IcoMenu = new ContextMenu();
         private bool dragging;
         private Point st_point = new Point(0, 0);
 
-
         private void MultiTask_Load(object sender, EventArgs e)
         {
+            IconMenu();
             notifyIcon.Visible = true;
+        }
+
+        public void IconMenu()
+        {
+            IcoMenu.MenuItems.Add("Open Application", (s, e) => WindowState = FormWindowState.Normal);
+            IcoMenu.MenuItems.Add("Exit", (s, e) => Application.Exit());
+            notifyIcon.ContextMenu = IcoMenu;
         }
 
         public void load_Form(object Form)
@@ -61,14 +69,6 @@ namespace MultiTaskBase
             System.Diagnostics.Process.Start("https://github.com/TMG8047KG/MultiTask");
         }
 
-        private void MultiTask_Resize(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                ShowInTaskbar = false;
-            }
-        }
-
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ShowInTaskbar = true;
@@ -78,7 +78,8 @@ namespace MultiTaskBase
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            WindowState = FormWindowState.Minimized;
+            ShowInTaskbar = false;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

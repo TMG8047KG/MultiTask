@@ -17,7 +17,7 @@ namespace MultiTaskBase
     public partial class RAM : Form
     {
         ulong TotalPhysical;
-        double KbyteToGb = Math.Pow(1024, 3) + 0.5;
+        private double KbyteToGb = Math.Pow(1024, 3) + 0.5;
 
         public RAM()
         {
@@ -112,11 +112,10 @@ namespace MultiTaskBase
             if (GlobalMemoryStatusEx(ramInfo))
             {
                 UsedMem = (ramInfo.ullTotalPhys - ramInfo.ullAvailPhys) / (ulong)Math.Pow(1024, 2);
-                lblUsedRAM.Text = "Used Memory\n" + string.Format("{0:0.0} GB", (UsedMem/(1024 + 0.5)));
+                lblUsedRAM.Text = "Used Memory\n" + string.Format("{0:0.0} GB", (UsedMem / (1024 + 0.5)));
                 lblAvaliableRAM.Text = "Available Memory\n" + string.Format("{0:0.0} GB", (ramInfo.ullAvailPhys / KbyteToGb));
                 MemChart.Series["memory"].Points.AddY(UsedMem);
             }
-            
         }
     }
 }

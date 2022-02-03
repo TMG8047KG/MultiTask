@@ -89,11 +89,11 @@ namespace MultiTaskBase
             series1.Name = "memory";
             series1.ToolTip = "#VAL{In use}";
             this.MemChart.Series.Add(series1);
-            this.MemChart.Size = new System.Drawing.Size(1000, 336);
+            this.MemChart.Size = new System.Drawing.Size(1000, 330);
             this.MemChart.TabIndex = 0;
             this.MemChart.Text = "Memory Usage";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title1.IsDockedInsideChartArea = false;
             title1.Name = "Total_memory";
             this.MemChart.Titles.Add(title1);
@@ -125,17 +125,17 @@ namespace MultiTaskBase
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 336);
+            this.panel2.Location = new System.Drawing.Point(0, 330);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 324);
+            this.panel2.Size = new System.Drawing.Size(1000, 330);
             this.panel2.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lblFormFactor);
             this.panel4.Controls.Add(this.lblSpeed);
-            this.panel4.Location = new System.Drawing.Point(305, 17);
+            this.panel4.Location = new System.Drawing.Point(295, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 295);
             this.panel4.TabIndex = 11;
@@ -167,7 +167,7 @@ namespace MultiTaskBase
             this.panel3.Controls.Add(this.lblUsedRAM);
             this.panel3.Controls.Add(this.lblAvaliableRAM);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(12, 17);
+            this.panel3.Location = new System.Drawing.Point(12, 6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(277, 50);
             this.panel3.TabIndex = 8;
@@ -233,14 +233,14 @@ namespace MultiTaskBase
         private System.Windows.Forms.Timer RAM_tick;
         private System.Windows.Forms.DataVisualization.Charting.Chart MemChart;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAvaliableRAM;
-        private System.Windows.Forms.Label lblPhysicalRAM;
         private System.Windows.Forms.Label lblUsedRAM;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.Label lblFormFactor;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblPhysicalRAM;
+        private System.Windows.Forms.Panel panel2;
     }
 }
