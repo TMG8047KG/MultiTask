@@ -78,6 +78,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Application_Usage_Time.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Application_Usage_Time.Designer.cs">
+      <DependentUpon>Application_Usage_Time.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\home_page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\home_page.Designer.cs">
+      <DependentUpon>home_page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +121,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Running_Apps.cs">
+    <Compile Include="Forms\Tasks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Running_Apps.Designer.cs">
-      <DependentUpon>Running_Apps.cs</DependentUpon>
+    <Compile Include="Forms\Tasks.Designer.cs">
+      <DependentUpon>Tasks.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Application_Usage_Time.resx">
+      <DependentUpon>Application_Usage_Time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\home_page.resx">
+      <DependentUpon>home_page.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,8 +149,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Running_Apps.resx">
-      <DependentUpon>Running_Apps.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Tasks.resx">
+      <DependentUpon>Tasks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

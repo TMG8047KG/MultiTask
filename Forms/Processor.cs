@@ -16,7 +16,11 @@ namespace MultiTaskBase
     {
         PerformanceCounter cpuCounter;
 
-        int L1, L2, L3;
+        private List<float> xV = new List<float>();
+        private List<float> yV = new List<float>();
+
+        int L2, L3;
+        float tick = 0.0f;
 
         public Processor()
         {
@@ -44,7 +48,20 @@ namespace MultiTaskBase
 
         private void CPU_tick_Tick(object sender, EventArgs e)
         {
-            ProcChart.Series[0].Points.AddY(cpuCounter.NextValue());
+            xV.Add(tick);
+            yV.Add(cpuCounter.NextValue());
+
+            if(tick > 12)
+            {
+                xV.RemoveAt(0);
+                yV.RemoveAt(0);
+            }
+
+            ProcChart.ChartAreas["chAreaCPU"].AxisX.Minimum = xV[0];
+            ProcChart.ChartAreas["chAreaCPU"].AxisX.Maximum = tick;
+
+            ProcChart.Series["CPUchart"].Points.DataBindXY(xV, yV);
+            tick += 1;
         }
     }
 }

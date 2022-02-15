@@ -61,13 +61,15 @@ namespace MultiTaskBase
             // ProcChart
             // 
             this.ProcChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
             chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
             chartArea1.AxisY.LabelStyle.Enabled = false;
             chartArea1.AxisY.Maximum = 100D;
             chartArea1.AxisY.Minimum = 0D;
             chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            chartArea1.Name = "ChartArea1";
+            chartArea1.Name = "chAreaCPU";
             this.ProcChart.ChartAreas.Add(chartArea1);
             this.ProcChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProcChart.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +77,7 @@ namespace MultiTaskBase
             this.ProcChart.Name = "ProcChart";
             series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(158)))));
             series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
+            series1.ChartArea = "chAreaCPU";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(90)))));

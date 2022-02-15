@@ -17,3 +17,5 @@ C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskCore.csproj.Co
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Properties.Resources.resources
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\Topshelf.dll
 C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\bin\Debug\Topshelf.xml
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Forms.Application_Usage_Time.resources
+C:\Users\USER\Source\Repos\TMG8047KG\MultiTask\obj\Debug\MultiTaskBase.Forms.home_page.resources

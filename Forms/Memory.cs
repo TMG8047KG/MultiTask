@@ -19,6 +19,10 @@ namespace MultiTaskBase
         ulong TotalPhysical;
         private double KbyteToGb = Math.Pow(1024, 3) + 0.5;
 
+        private List<float> xV = new List<float>();
+        private List<float> yV = new List<float>();
+        float tick = 0.0f;
+
         public RAM()
         {
             InitializeComponent();
@@ -114,8 +118,21 @@ namespace MultiTaskBase
                 UsedMem = (ramInfo.ullTotalPhys - ramInfo.ullAvailPhys) / (ulong)Math.Pow(1024, 2);
                 lblUsedRAM.Text = "Used Memory\n" + string.Format("{0:0.0} GB", (UsedMem / (1024 + 0.5)));
                 lblAvaliableRAM.Text = "Available Memory\n" + string.Format("{0:0.0} GB", (ramInfo.ullAvailPhys / KbyteToGb));
-                MemChart.Series["memory"].Points.AddY(UsedMem);
+                yV.Add(UsedMem);
             }
+            xV.Add(tick);
+            
+            if (tick > 12)
+            {
+                xV.RemoveAt(0);
+                yV.RemoveAt(0);
+            }
+
+            MemChart.ChartAreas[0].AxisX.Minimum = xV[0];
+            MemChart.ChartAreas[0].AxisX.Maximum = tick;
+
+            MemChart.Series[0].Points.DataBindXY(xV, yV);
+            tick += 1;
         }
     }
 }

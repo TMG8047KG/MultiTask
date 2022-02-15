@@ -33,10 +33,10 @@ namespace MultiTaskBase
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTask));
             this.basePanel = new System.Windows.Forms.Panel();
             this.pButtons = new System.Windows.Forms.Panel();
-            this.btnCPU = new System.Windows.Forms.Button();
-            this.btnRunningApps = new System.Windows.Forms.Button();
             this.btnMem = new System.Windows.Forms.Button();
+            this.btnCPU = new System.Windows.Forms.Button();
             this.btnActiveT = new System.Windows.Forms.Button();
+            this.btnRunningApps = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblGitinfo = new System.Windows.Forms.Label();
             this.btnGit = new System.Windows.Forms.Button();
@@ -68,15 +68,31 @@ namespace MultiTaskBase
             // 
             // pButtons
             // 
-            this.pButtons.Controls.Add(this.btnCPU);
-            this.pButtons.Controls.Add(this.btnRunningApps);
             this.pButtons.Controls.Add(this.btnMem);
+            this.pButtons.Controls.Add(this.btnCPU);
             this.pButtons.Controls.Add(this.btnActiveT);
-            this.pButtons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pButtons.Controls.Add(this.btnRunningApps);
+            this.pButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pButtons.Location = new System.Drawing.Point(0, 108);
             this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(200, 248);
+            this.pButtons.Size = new System.Drawing.Size(200, 532);
             this.pButtons.TabIndex = 3;
+            // 
+            // btnMem
+            // 
+            this.btnMem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnMem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMem.FlatAppearance.BorderSize = 0;
+            this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnMem.Location = new System.Drawing.Point(0, 180);
+            this.btnMem.Name = "btnMem";
+            this.btnMem.Size = new System.Drawing.Size(200, 60);
+            this.btnMem.TabIndex = 2;
+            this.btnMem.Text = "Memory";
+            this.btnMem.UseVisualStyleBackColor = false;
+            this.btnMem.Click += new System.EventHandler(this.btnMem_Click);
             // 
             // btnCPU
             // 
@@ -89,46 +105,14 @@ namespace MultiTaskBase
             this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCPU.ImageKey = "(none)";
-            this.btnCPU.Location = new System.Drawing.Point(0, 180);
+            this.btnCPU.Location = new System.Drawing.Point(0, 120);
             this.btnCPU.Name = "btnCPU";
             this.btnCPU.Size = new System.Drawing.Size(200, 60);
             this.btnCPU.TabIndex = 3;
-            this.btnCPU.Text = "Processor";
+            this.btnCPU.Text = "CPU";
             this.btnCPU.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCPU.UseVisualStyleBackColor = false;
             this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
-            // 
-            // btnRunningApps
-            // 
-            this.btnRunningApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btnRunningApps.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRunningApps.FlatAppearance.BorderSize = 0;
-            this.btnRunningApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunningApps.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnRunningApps.Location = new System.Drawing.Point(0, 120);
-            this.btnRunningApps.Name = "btnRunningApps";
-            this.btnRunningApps.Size = new System.Drawing.Size(200, 60);
-            this.btnRunningApps.TabIndex = 0;
-            this.btnRunningApps.Text = "Running Apps";
-            this.btnRunningApps.UseVisualStyleBackColor = false;
-            this.btnRunningApps.Click += new System.EventHandler(this.btnRunningApps_Click);
-            // 
-            // btnMem
-            // 
-            this.btnMem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btnMem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMem.FlatAppearance.BorderSize = 0;
-            this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnMem.Location = new System.Drawing.Point(0, 60);
-            this.btnMem.Name = "btnMem";
-            this.btnMem.Size = new System.Drawing.Size(200, 60);
-            this.btnMem.TabIndex = 2;
-            this.btnMem.Text = "Memory";
-            this.btnMem.UseVisualStyleBackColor = false;
-            this.btnMem.Click += new System.EventHandler(this.btnMem_Click);
             // 
             // btnActiveT
             // 
@@ -138,13 +122,29 @@ namespace MultiTaskBase
             this.btnActiveT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActiveT.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnActiveT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnActiveT.Location = new System.Drawing.Point(0, 0);
+            this.btnActiveT.Location = new System.Drawing.Point(0, 60);
             this.btnActiveT.Name = "btnActiveT";
             this.btnActiveT.Size = new System.Drawing.Size(200, 60);
             this.btnActiveT.TabIndex = 1;
             this.btnActiveT.Text = "Active Time";
             this.btnActiveT.UseVisualStyleBackColor = false;
-            this.btnActiveT.Visible = false;
+            this.btnActiveT.Click += new System.EventHandler(this.btnActiveT_Click);
+            // 
+            // btnRunningApps
+            // 
+            this.btnRunningApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnRunningApps.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRunningApps.FlatAppearance.BorderSize = 0;
+            this.btnRunningApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunningApps.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnRunningApps.Location = new System.Drawing.Point(0, 0);
+            this.btnRunningApps.Name = "btnRunningApps";
+            this.btnRunningApps.Size = new System.Drawing.Size(200, 60);
+            this.btnRunningApps.TabIndex = 0;
+            this.btnRunningApps.Text = "Processes";
+            this.btnRunningApps.UseVisualStyleBackColor = false;
+            this.btnRunningApps.Click += new System.EventHandler(this.btnRunningApps_Click);
             // 
             // panel2
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiTaskBase.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,7 @@ namespace MultiTaskBase
 
         private void MultiTask_Load(object sender, EventArgs e)
         {
+            load_Form(new home_page());
             IconMenu();
             notifyIcon.Visible = true;
         }
@@ -36,14 +38,14 @@ namespace MultiTaskBase
         }
 
         public void load_Form(object Form)
-        {
+        {   
+            Form fm = Form as Form;
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
             if(this.mainPanel.Controls.Count > 0)
             {
                 this.mainPanel.Controls.RemoveAt(0);
             }
-            Form fm = Form as Form;
-            fm.TopLevel = false;
-            fm.Dock = DockStyle.Fill;
             this.mainPanel.Controls.Add(fm);
             this.mainPanel.Tag = fm;
             fm.Show();
@@ -105,6 +107,11 @@ namespace MultiTaskBase
         private void FnBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void btnActiveT_Click(object sender, EventArgs e)
+        {
+            load_Form(new Application_Usage_Time());
         }
     }
 }
