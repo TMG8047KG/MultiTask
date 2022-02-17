@@ -76,6 +76,7 @@ namespace MultiTaskBase
             this.MemChart.ChartAreas.Add(chartArea1);
             this.MemChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MemChart.Location = new System.Drawing.Point(0, 0);
+            this.MemChart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MemChart.Name = "MemChart";
             this.MemChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(38)))), ((int)(((byte)(115)))));
@@ -89,7 +90,7 @@ namespace MultiTaskBase
             series1.Name = "memory";
             series1.ToolTip = "#VAL{In use}";
             this.MemChart.Series.Add(series1);
-            this.MemChart.Size = new System.Drawing.Size(1000, 330);
+            this.MemChart.Size = new System.Drawing.Size(1000, 332);
             this.MemChart.TabIndex = 0;
             this.MemChart.Text = "Memory Usage";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
@@ -101,11 +102,10 @@ namespace MultiTaskBase
             // panel1
             // 
             this.panel1.Controls.Add(this.MemChart);
-            this.panel1.Controls.Add(this.lblPhysicalRAM);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 660);
             this.panel1.TabIndex = 2;
@@ -114,7 +114,7 @@ namespace MultiTaskBase
             // 
             this.lblPhysicalRAM.AutoSize = true;
             this.lblPhysicalRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPhysicalRAM.Location = new System.Drawing.Point(704, 275);
+            this.lblPhysicalRAM.Location = new System.Drawing.Point(767, 79);
             this.lblPhysicalRAM.Name = "lblPhysicalRAM";
             this.lblPhysicalRAM.Size = new System.Drawing.Size(110, 19);
             this.lblPhysicalRAM.TabIndex = 4;
@@ -123,21 +123,23 @@ namespace MultiTaskBase
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.lblPhysicalRAM);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 330);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 332);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 330);
+            this.panel2.Size = new System.Drawing.Size(1000, 328);
             this.panel2.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lblFormFactor);
             this.panel4.Controls.Add(this.lblSpeed);
-            this.panel4.Location = new System.Drawing.Point(295, 6);
+            this.panel4.Location = new System.Drawing.Point(337, 8);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(236, 295);
+            this.panel4.Size = new System.Drawing.Size(270, 369);
             this.panel4.TabIndex = 11;
             // 
             // lblFormFactor
@@ -167,9 +169,10 @@ namespace MultiTaskBase
             this.panel3.Controls.Add(this.lblUsedRAM);
             this.panel3.Controls.Add(this.lblAvaliableRAM);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(12, 6);
+            this.panel3.Location = new System.Drawing.Point(14, 8);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(277, 50);
+            this.panel3.Size = new System.Drawing.Size(317, 62);
             this.panel3.TabIndex = 8;
             // 
             // lblUsedRAM
@@ -177,7 +180,7 @@ namespace MultiTaskBase
             this.lblUsedRAM.AutoSize = true;
             this.lblUsedRAM.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblUsedRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUsedRAM.Location = new System.Drawing.Point(5, 0);
+            this.lblUsedRAM.Location = new System.Drawing.Point(6, 0);
             this.lblUsedRAM.Name = "lblUsedRAM";
             this.lblUsedRAM.Size = new System.Drawing.Size(114, 19);
             this.lblUsedRAM.TabIndex = 1;
@@ -188,7 +191,7 @@ namespace MultiTaskBase
             this.lblAvaliableRAM.AutoSize = true;
             this.lblAvaliableRAM.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblAvaliableRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblAvaliableRAM.Location = new System.Drawing.Point(135, 0);
+            this.lblAvaliableRAM.Location = new System.Drawing.Point(175, 0);
             this.lblAvaliableRAM.Name = "lblAvaliableRAM";
             this.lblAvaliableRAM.Size = new System.Drawing.Size(142, 19);
             this.lblAvaliableRAM.TabIndex = 2;
@@ -199,28 +202,28 @@ namespace MultiTaskBase
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(49)))), ((int)(((byte)(155)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 50);
+            this.panel5.Size = new System.Drawing.Size(6, 62);
             this.panel5.TabIndex = 7;
             // 
             // RAM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 660);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "RAM";
             this.Text = "Memory";
             this.Load += new System.EventHandler(this.Memory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MemChart)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
