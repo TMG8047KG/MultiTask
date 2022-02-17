@@ -47,6 +47,7 @@ namespace MultiTaskBase
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.basePanel.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,10 +69,11 @@ namespace MultiTaskBase
             // 
             // pButtons
             // 
-            this.pButtons.Controls.Add(this.btnMem);
-            this.pButtons.Controls.Add(this.btnCPU);
             this.pButtons.Controls.Add(this.btnActiveT);
             this.pButtons.Controls.Add(this.btnRunningApps);
+            this.pButtons.Controls.Add(this.btnCPU);
+            this.pButtons.Controls.Add(this.btnMem);
+            this.pButtons.Controls.Add(this.btn_Home);
             this.pButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pButtons.Location = new System.Drawing.Point(0, 108);
             this.pButtons.Name = "pButtons";
@@ -86,7 +88,7 @@ namespace MultiTaskBase
             this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnMem.Location = new System.Drawing.Point(0, 180);
+            this.btnMem.Location = new System.Drawing.Point(0, 60);
             this.btnMem.Name = "btnMem";
             this.btnMem.Size = new System.Drawing.Size(200, 60);
             this.btnMem.TabIndex = 2;
@@ -122,7 +124,7 @@ namespace MultiTaskBase
             this.btnActiveT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActiveT.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnActiveT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnActiveT.Location = new System.Drawing.Point(0, 60);
+            this.btnActiveT.Location = new System.Drawing.Point(0, 240);
             this.btnActiveT.Name = "btnActiveT";
             this.btnActiveT.Size = new System.Drawing.Size(200, 60);
             this.btnActiveT.TabIndex = 1;
@@ -138,7 +140,7 @@ namespace MultiTaskBase
             this.btnRunningApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunningApps.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnRunningApps.Location = new System.Drawing.Point(0, 0);
+            this.btnRunningApps.Location = new System.Drawing.Point(0, 180);
             this.btnRunningApps.Name = "btnRunningApps";
             this.btnRunningApps.Size = new System.Drawing.Size(200, 60);
             this.btnRunningApps.TabIndex = 0;
@@ -190,6 +192,9 @@ namespace MultiTaskBase
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(200, 108);
             this.logoPanel.TabIndex = 0;
+            this.logoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
+            this.logoPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
+            this.logoPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
             // 
             // notifyIcon
             // 
@@ -222,6 +227,9 @@ namespace MultiTaskBase
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
             // 
             // btnMinimize
             // 
@@ -258,13 +266,28 @@ namespace MultiTaskBase
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.mainPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainPanel.BackgroundImage")));
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainPanel.Location = new System.Drawing.Point(200, 40);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1000, 660);
             this.mainPanel.TabIndex = 2;
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(200, 60);
+            this.btn_Home.TabIndex = 4;
+            this.btn_Home.Text = "Home";
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // MultiTask
             // 
@@ -309,6 +332,7 @@ namespace MultiTaskBase
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Panel pButtons;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Home;
     }
 }
 

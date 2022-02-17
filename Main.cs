@@ -32,9 +32,15 @@ namespace MultiTaskBase
 
         public void IconMenu()
         {
-            IcoMenu.MenuItems.Add("Open Application", (s, e) => WindowState = FormWindowState.Normal);
+            IcoMenu.MenuItems.Add("Open Application", (s, e) => Ico_openApp());
             IcoMenu.MenuItems.Add("Exit", (s, e) => Application.Exit());
             notifyIcon.ContextMenu = IcoMenu;
+        }
+
+        public void Ico_openApp()
+        {
+            WindowState = FormWindowState.Normal;
+            ShowInTaskbar = true;
         }
 
         public void load_Form(object Form)
@@ -112,6 +118,11 @@ namespace MultiTaskBase
         private void btnActiveT_Click(object sender, EventArgs e)
         {
             load_Form(new Application_Usage_Time());
+        }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+            load_Form(new home_page());
         }
     }
 }
