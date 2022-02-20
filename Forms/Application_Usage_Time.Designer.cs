@@ -29,19 +29,26 @@ namespace MultiTaskBase.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.timeGrid = new System.Windows.Forms.DataGridView();
             this.dataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tick = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.timeGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // timeGrid
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.timeGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.timeGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.timeGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.timeGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -49,16 +56,20 @@ namespace MultiTaskBase.Forms
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataName});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
+            this.timeGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.timeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.timeGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataName,
+            this.useTime,
+            this.runningTime,
+            this.total_useTime,
+            this.total_runningTime});
+            this.timeGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timeGrid.EnableHeadersVisualStyles = false;
+            this.timeGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.timeGrid.Location = new System.Drawing.Point(0, 0);
+            this.timeGrid.Name = "timeGrid";
+            this.timeGrid.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,12 +77,12 @@ namespace MultiTaskBase.Forms
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
+            this.timeGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.timeGrid.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 660);
-            this.dataGridView1.TabIndex = 0;
+            this.timeGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.timeGrid.Size = new System.Drawing.Size(1000, 660);
+            this.timeGrid.TabIndex = 0;
             // 
             // dataName
             // 
@@ -79,7 +90,37 @@ namespace MultiTaskBase.Forms
             this.dataName.HeaderText = "Name";
             this.dataName.Name = "dataName";
             this.dataName.ReadOnly = true;
-            this.dataName.Width = 69;
+            this.dataName.Width = 67;
+            // 
+            // useTime
+            // 
+            this.useTime.HeaderText = "Use Time";
+            this.useTime.Name = "useTime";
+            this.useTime.ReadOnly = true;
+            // 
+            // runningTime
+            // 
+            this.runningTime.HeaderText = "Running Time";
+            this.runningTime.Name = "runningTime";
+            this.runningTime.ReadOnly = true;
+            // 
+            // total_useTime
+            // 
+            this.total_useTime.HeaderText = "Total Use Time";
+            this.total_useTime.Name = "total_useTime";
+            this.total_useTime.ReadOnly = true;
+            // 
+            // total_runningTime
+            // 
+            this.total_runningTime.HeaderText = "Total Running Time";
+            this.total_runningTime.Name = "total_runningTime";
+            this.total_runningTime.ReadOnly = true;
+            // 
+            // tick
+            // 
+            this.tick.Enabled = true;
+            this.tick.Interval = 1000;
+            this.tick.Tick += new System.EventHandler(this.tick_Tick);
             // 
             // Application_Usage_Time
             // 
@@ -87,19 +128,24 @@ namespace MultiTaskBase.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 660);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.timeGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Application_Usage_Time";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.UsageTime_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView timeGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn useTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn runningTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_useTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_runningTime;
+        private System.Windows.Forms.Timer tick;
     }
 }
