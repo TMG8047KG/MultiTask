@@ -25,6 +25,7 @@ namespace MultiTaskBase.Forms
         }
         public string getActiveWindowName()
         {
+            string processName;
             try
             {
                 var activatedHandle = GetForegroundWindow();
@@ -35,12 +36,12 @@ namespace MultiTaskBase.Forms
 
                     if (activatedHandle == clsProcess.MainWindowHandle)
                     {
-                        string processName = clsProcess.ProcessName;
+                        processName = clsProcess.ProcessName;
 
                         return processName;
                         if (processName != timeGrid.GetType().Name)
                         {
-                            timeGrid.Rows.Add(clsProcess.MainWindowTitle);
+                            //timeGrid.Rows.Add(clsProcess.MainWindowTitle);
                         }
                         else if (processName == timeGrid.GetType().Name)
                         {
@@ -51,10 +52,48 @@ namespace MultiTaskBase.Forms
             }
             catch { }
             return null;
+
+            timeGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in timeGrid.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(processName))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         private static extern IntPtr GetForegroundWindow();
+
+        public void fifi()
+        {
+            Process[] proc = Process.GetProcesses();
+            foreach (Process test in proc)
+            {
+                try
+                {
+                   timeGrid.Rows.Add(test.MainWindowTitle);
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == 5)
+                    {
+                        continue;
+                    }
+                    throw;
+                }
+            }
+        }
+
 
         private void tick_Tick(object sender, EventArgs e)
         {
