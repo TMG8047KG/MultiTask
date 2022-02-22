@@ -34,12 +34,12 @@ namespace MultiTaskBase.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timeGrid = new System.Windows.Forms.DataGridView();
+            this.tick = new System.Windows.Forms.Timer(this.components);
             this.dataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.timeGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,13 +84,18 @@ namespace MultiTaskBase.Forms
             this.timeGrid.Size = new System.Drawing.Size(1000, 660);
             this.timeGrid.TabIndex = 0;
             // 
+            // tick
+            // 
+            this.tick.Enabled = true;
+            this.tick.Interval = 1000;
+            this.tick.Tick += new System.EventHandler(this.tick_Tick);
+            // 
             // dataName
             // 
-            this.dataName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataName.HeaderText = "Name";
             this.dataName.Name = "dataName";
             this.dataName.ReadOnly = true;
-            this.dataName.Width = 67;
             // 
             // useTime
             // 
@@ -116,12 +121,6 @@ namespace MultiTaskBase.Forms
             this.total_runningTime.Name = "total_runningTime";
             this.total_runningTime.ReadOnly = true;
             // 
-            // tick
-            // 
-            this.tick.Enabled = true;
-            this.tick.Interval = 1000;
-            this.tick.Tick += new System.EventHandler(this.tick_Tick);
-            // 
             // Application_Usage_Time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,11 +140,11 @@ namespace MultiTaskBase.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView timeGrid;
+        private System.Windows.Forms.Timer tick;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataName;
         private System.Windows.Forms.DataGridViewTextBoxColumn useTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn runningTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_useTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_runningTime;
-        private System.Windows.Forms.Timer tick;
     }
 }

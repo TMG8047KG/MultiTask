@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace MultiTaskBase.Forms
 {
@@ -39,14 +33,6 @@ namespace MultiTaskBase.Forms
                         processName = clsProcess.ProcessName;
 
                         return processName;
-                        if (processName != timeGrid.GetType().Name)
-                        {
-                            //timeGrid.Rows.Add(clsProcess.MainWindowTitle);
-                        }
-                        else if (processName == timeGrid.GetType().Name)
-                        {
-
-                        }
                     }
                 }
             }
@@ -58,7 +44,7 @@ namespace MultiTaskBase.Forms
             {
                 foreach (DataGridViewRow row in timeGrid.Rows)
                 {
-                    if (row.Cells[0].Value.ToString().Equals(processName))
+                    if (row.Cells[0].Value.Equals(processName))
                     {
                         row.Selected = true;
                         break;
@@ -81,7 +67,7 @@ namespace MultiTaskBase.Forms
             {
                 try
                 {
-                   timeGrid.Rows.Add(test.MainWindowTitle);
+                    timeGrid.Rows.Add(test.ProcessName, 0, 0, 0, 0);
                 }
                 catch (Win32Exception ex)
                 {
@@ -97,7 +83,6 @@ namespace MultiTaskBase.Forms
 
         private void tick_Tick(object sender, EventArgs e)
         {
-            getActiveWindowName();
         }
     }
 }
