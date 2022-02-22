@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Forms"
+    "\\Forms",
+    "\\Properties"
   ],
-  "SelectedNode": "\\Forms\\Application_Usage_Time.cs",
+  "SelectedNode": "\\sMultiTask.sln",
   "PreviewInSolutionExplorer": false
 }

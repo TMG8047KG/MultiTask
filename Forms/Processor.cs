@@ -48,8 +48,10 @@ namespace MultiTaskBase
 
         private void CPU_tick_Tick(object sender, EventArgs e)
         {
+            float util = cpuCounter.NextValue();
+            
             xV.Add(tick);
-            yV.Add(cpuCounter.NextValue());
+            yV.Add(util);
 
             if(tick > 12)
             {
@@ -62,6 +64,8 @@ namespace MultiTaskBase
 
             ProcChart.Series["CPUchart"].Points.DataBindXY(xV, yV);
             tick += 1;
+
+            lblUtily.Text = "Utilization\n" + (int)util;
         }
     }
 }
