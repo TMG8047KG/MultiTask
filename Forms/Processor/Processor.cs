@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
 using System.Diagnostics;
+using MultiTaskBase.Forms.Processor;
 
 namespace MultiTaskBase
 {
@@ -19,8 +20,10 @@ namespace MultiTaskBase
         private List<float> xV = new List<float>();
         private List<float> yV = new List<float>();
 
-        int L2, L3;
+        long L1, L2, L3;
         float tick = 0.0f;
+
+        
 
         public Processor()
         {
@@ -38,12 +41,16 @@ namespace MultiTaskBase
                 ProcChart.Titles[0].Text = "" + obj["Name"];
                 lblCores.Text = "Cores:\n" + obj["NumberOfCores"];
                 lblLogicalProcs.Text = "Logical Processors:\n" + obj["NumberOfLogicalProcessors"];
-                lblBaseSpeed.Text = "Base Speed:\n" + obj["CurrentClockSpeed"];
+                lblBaseSpeed.Text = "Base Speed:\n" + string.Format("{0:0.00} GHz", Convert.ToInt32(obj["CurrentClockSpeed"])/1000.0);
                 L2 = Convert.ToInt32(obj["L2CacheSize"]);
                 L3 = Convert.ToInt32(obj["L3CacheSize"]); 
             }
-            lblL2cache.Text = "L2 Cache:\n" + string.Format("{0:0.0} MB", L2 / 0.5);
-            lblL3cache.Text = "L3 Cache:\n" + string.Format("{0:0.0} MB", L3 / 0.5);
+
+            CPU_cache.GetPerCoreCacheSizes(out L1, out L2, out L3);
+
+            lblL1cache.Text = "L1 Cache:\n" + string.Format("{0} KB", (L1/1024)*6);
+            lblL2cache.Text = "L2 Cache:\n" + string.Format("{0:0.0} KB", (L2 / Math.Pow(1024, 2) * 6) + 0.0);
+            lblL3cache.Text = "L3 Cache:\n" + string.Format("{0:0.0} KB", (L3/Math.Pow(1024, 2) * 2) + 0.0);
         }
 
         private void CPU_tick_Tick(object sender, EventArgs e)
