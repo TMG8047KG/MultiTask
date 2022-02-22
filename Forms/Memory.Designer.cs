@@ -36,11 +36,11 @@ namespace MultiTaskBase
             this.RAM_tick = new System.Windows.Forms.Timer(this.components);
             this.MemChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPhysicalRAM = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblFormFactor = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
+            this.lblPhysicalRAM = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblUsedRAM = new System.Windows.Forms.Label();
             this.lblAvaliableRAM = new System.Windows.Forms.Label();
@@ -163,6 +163,16 @@ namespace MultiTaskBase
             this.lblSpeed.Size = new System.Drawing.Size(58, 19);
             this.lblSpeed.TabIndex = 8;
             this.lblSpeed.Text = "Speed";
+            // 
+            // lblPhysicalRAM
+            // 
+            this.lblPhysicalRAM.AutoSize = true;
+            this.lblPhysicalRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPhysicalRAM.Location = new System.Drawing.Point(767, 79);
+            this.lblPhysicalRAM.Name = "lblPhysicalRAM";
+            this.lblPhysicalRAM.Size = new System.Drawing.Size(110, 19);
+            this.lblPhysicalRAM.TabIndex = 4;
+            this.lblPhysicalRAM.Text = "PhysicalRAM";
             // 
             // panel3
             // 
