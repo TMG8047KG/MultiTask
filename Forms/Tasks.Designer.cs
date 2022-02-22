@@ -43,7 +43,9 @@ namespace MultiTaskBase
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.AllowUserToResizeColumns = false;
             this.dataGrid.AllowUserToResizeRows = false;
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -77,13 +79,11 @@ namespace MultiTaskBase
             // 
             // procName
             // 
-            this.procName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.procName.FillWeight = 1000F;
             this.procName.HeaderText = "Process Name";
             this.procName.Name = "procName";
             this.procName.ReadOnly = true;
             this.procName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.procName.Width = 842;
             // 
             // PID
             // 
@@ -92,7 +92,7 @@ namespace MultiTaskBase
             this.PID.HeaderText = "PID";
             this.PID.Name = "PID";
             this.PID.ReadOnly = true;
-            this.PID.Width = 142;
+            this.PID.Width = 180;
             // 
             // btnStopProc
             // 
