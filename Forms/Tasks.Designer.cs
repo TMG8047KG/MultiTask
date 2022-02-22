@@ -31,9 +31,9 @@ namespace MultiTaskBase
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.btnStopProc = new System.Windows.Forms.Button();
             this.procName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStopProc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,22 +77,6 @@ namespace MultiTaskBase
             this.dataGrid.Size = new System.Drawing.Size(1000, 660);
             this.dataGrid.TabIndex = 0;
             // 
-            // btnStopProc
-            // 
-            this.btnStopProc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btnStopProc.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnStopProc.FlatAppearance.BorderSize = 0;
-            this.btnStopProc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopProc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnStopProc.Location = new System.Drawing.Point(0, 614);
-            this.btnStopProc.Name = "btnStopProc";
-            this.btnStopProc.Size = new System.Drawing.Size(1000, 46);
-            this.btnStopProc.TabIndex = 1;
-            this.btnStopProc.Text = "Stop Process";
-            this.btnStopProc.UseVisualStyleBackColor = false;
-            this.btnStopProc.Click += new System.EventHandler(this.btnStopProc_Click);
-            // 
             // procName
             // 
             this.procName.FillWeight = 1000F;
@@ -109,6 +93,22 @@ namespace MultiTaskBase
             this.PID.Name = "PID";
             this.PID.ReadOnly = true;
             this.PID.Width = 180;
+            // 
+            // btnStopProc
+            // 
+            this.btnStopProc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnStopProc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnStopProc.FlatAppearance.BorderSize = 0;
+            this.btnStopProc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopProc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnStopProc.Location = new System.Drawing.Point(0, 614);
+            this.btnStopProc.Name = "btnStopProc";
+            this.btnStopProc.Size = new System.Drawing.Size(1000, 46);
+            this.btnStopProc.TabIndex = 1;
+            this.btnStopProc.Text = "Stop Process";
+            this.btnStopProc.UseVisualStyleBackColor = false;
+            this.btnStopProc.Click += new System.EventHandler(this.btnStopProc_Click);
             // 
             // Running_Apps
             // 

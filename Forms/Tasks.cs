@@ -57,7 +57,5 @@ namespace MultiTaskBase
             //    messagebox.show(ex.message, "message", messageboxbuttons.ok, messageboxicon.error);
             //}
         }
-
-       
     }
 }

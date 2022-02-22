@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Forms",
-    "\\Properties"
+    "\\Forms"
   ],
-  "SelectedNode": "\\Main.cs",
+  "SelectedNode": "\\Forms\\Application_Usage_Time.cs",
   "PreviewInSolutionExplorer": false
 }

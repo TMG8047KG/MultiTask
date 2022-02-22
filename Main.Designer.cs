@@ -33,10 +33,11 @@ namespace MultiTaskBase
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultiTask));
             this.basePanel = new System.Windows.Forms.Panel();
             this.pButtons = new System.Windows.Forms.Panel();
-            this.btnMem = new System.Windows.Forms.Button();
-            this.btnCPU = new System.Windows.Forms.Button();
             this.btnActiveT = new System.Windows.Forms.Button();
             this.btnRunningApps = new System.Windows.Forms.Button();
+            this.btnCPU = new System.Windows.Forms.Button();
+            this.btnMem = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblGitinfo = new System.Windows.Forms.Label();
             this.btnGit = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace MultiTaskBase
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btn_Home = new System.Windows.Forms.Button();
             this.basePanel.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,42 +80,6 @@ namespace MultiTaskBase
             this.pButtons.Size = new System.Drawing.Size(200, 532);
             this.pButtons.TabIndex = 3;
             // 
-            // btnMem
-            // 
-            this.btnMem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btnMem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMem.FlatAppearance.BorderSize = 0;
-            this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnMem.Location = new System.Drawing.Point(0, 60);
-            this.btnMem.Name = "btnMem";
-            this.btnMem.Size = new System.Drawing.Size(200, 60);
-            this.btnMem.TabIndex = 2;
-            this.btnMem.Text = "Memory";
-            this.btnMem.UseVisualStyleBackColor = false;
-            this.btnMem.Click += new System.EventHandler(this.btnMem_Click);
-            // 
-            // btnCPU
-            // 
-            this.btnCPU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btnCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCPU.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCPU.FlatAppearance.BorderSize = 0;
-            this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCPU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btnCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCPU.ImageKey = "(none)";
-            this.btnCPU.Location = new System.Drawing.Point(0, 120);
-            this.btnCPU.Name = "btnCPU";
-            this.btnCPU.Size = new System.Drawing.Size(200, 60);
-            this.btnCPU.TabIndex = 3;
-            this.btnCPU.Text = "CPU";
-            this.btnCPU.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCPU.UseVisualStyleBackColor = false;
-            this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
-            // 
             // btnActiveT
             // 
             this.btnActiveT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
@@ -147,6 +111,58 @@ namespace MultiTaskBase
             this.btnRunningApps.Text = "Processes";
             this.btnRunningApps.UseVisualStyleBackColor = false;
             this.btnRunningApps.Click += new System.EventHandler(this.btnRunningApps_Click);
+            // 
+            // btnCPU
+            // 
+            this.btnCPU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnCPU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCPU.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCPU.FlatAppearance.BorderSize = 0;
+            this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCPU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCPU.ImageKey = "(none)";
+            this.btnCPU.Location = new System.Drawing.Point(0, 120);
+            this.btnCPU.Name = "btnCPU";
+            this.btnCPU.Size = new System.Drawing.Size(200, 60);
+            this.btnCPU.TabIndex = 3;
+            this.btnCPU.Text = "CPU";
+            this.btnCPU.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCPU.UseVisualStyleBackColor = false;
+            this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
+            // 
+            // btnMem
+            // 
+            this.btnMem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btnMem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMem.FlatAppearance.BorderSize = 0;
+            this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btnMem.Location = new System.Drawing.Point(0, 60);
+            this.btnMem.Name = "btnMem";
+            this.btnMem.Size = new System.Drawing.Size(200, 60);
+            this.btnMem.TabIndex = 2;
+            this.btnMem.Text = "Memory";
+            this.btnMem.UseVisualStyleBackColor = false;
+            this.btnMem.Click += new System.EventHandler(this.btnMem_Click);
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(200, 60);
+            this.btn_Home.TabIndex = 4;
+            this.btn_Home.Text = "Home";
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // panel2
             // 
@@ -272,22 +288,6 @@ namespace MultiTaskBase
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1000, 660);
             this.mainPanel.TabIndex = 2;
-            // 
-            // btn_Home
-            // 
-            this.btn_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
-            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Home.FlatAppearance.BorderSize = 0;
-            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.btn_Home.Location = new System.Drawing.Point(0, 0);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(200, 60);
-            this.btn_Home.TabIndex = 4;
-            this.btn_Home.Text = "Home";
-            this.btn_Home.UseVisualStyleBackColor = false;
-            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // MultiTask
             // 
