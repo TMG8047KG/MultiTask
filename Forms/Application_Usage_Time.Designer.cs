@@ -34,20 +34,25 @@ namespace MultiTaskBase.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timeGrid = new System.Windows.Forms.DataGridView();
-            this.tick = new System.Windows.Forms.Timer(this.components);
             this.dataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_useTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_runningTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.timeGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // timeGrid
             // 
+            this.timeGrid.AllowUserToAddRows = false;
+            this.timeGrid.AllowUserToDeleteRows = false;
+            this.timeGrid.AllowUserToResizeColumns = false;
+            this.timeGrid.AllowUserToResizeRows = false;
             this.timeGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.timeGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.timeGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.timeGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.timeGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(48)))));
@@ -70,6 +75,7 @@ namespace MultiTaskBase.Forms
             this.timeGrid.Location = new System.Drawing.Point(0, 0);
             this.timeGrid.Name = "timeGrid";
             this.timeGrid.ReadOnly = true;
+            this.timeGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,15 +86,10 @@ namespace MultiTaskBase.Forms
             this.timeGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.timeGrid.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.timeGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.timeGrid.Size = new System.Drawing.Size(1000, 660);
             this.timeGrid.TabIndex = 0;
-            // 
-            // tick
-            // 
-            this.tick.Enabled = true;
-            this.tick.Interval = 1000;
-            this.tick.Tick += new System.EventHandler(this.tick_Tick);
             // 
             // dataName
             // 
@@ -120,6 +121,12 @@ namespace MultiTaskBase.Forms
             this.total_runningTime.HeaderText = "Total Running Time";
             this.total_runningTime.Name = "total_runningTime";
             this.total_runningTime.ReadOnly = true;
+            // 
+            // tick
+            // 
+            this.tick.Enabled = true;
+            this.tick.Interval = 1000;
+            this.tick.Tick += new System.EventHandler(this.tick_Tick);
             // 
             // Application_Usage_Time
             // 
