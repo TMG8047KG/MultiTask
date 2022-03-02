@@ -8,7 +8,8 @@ namespace MultiTaskBase.Forms
 {
     public partial class Application_Usage_Time : Form
     {
-        public int use_time=1;
+        public int use_Time = 1;
+        public int run_Time = 1;
 
 
         public Application_Usage_Time()
@@ -25,14 +26,15 @@ namespace MultiTaskBase.Forms
             string processName=""; 
             var activatedHandle = GetForegroundWindow();
             try { 
+                run_Time += 1;
                 Process[] processes = Process.GetProcesses();
                 foreach (Process clsProcess in processes)
                 {
+                    timeGrid.Rows.Add(clsProcess.ProcessName, 0, run_Time, 0, 0);
                     if(activatedHandle == clsProcess.MainWindowHandle)
                     {
-                        
                         processName = clsProcess.ProcessName;
-                        timeGrid.Rows.Add(processName, use_time, clsProcess.StartTime.ToString("T"), 0, 0);
+                        timeGrid.Rows.Add(processName, use_Time, 0, 0, 0);
                     }
                 }
 
