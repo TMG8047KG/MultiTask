@@ -16,5 +16,10 @@ namespace MultiTaskBase.Forms
         {
             InitializeComponent();
         }
+
+        private void home_page_Load(object sender, EventArgs e)
+        {
+            lblPCname.Text = System.Windows.Forms.SystemInformation.ComputerName;
+        }
     }
 }
