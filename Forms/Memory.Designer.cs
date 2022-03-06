@@ -110,16 +110,6 @@ namespace MultiTaskBase
             this.panel1.Size = new System.Drawing.Size(1000, 660);
             this.panel1.TabIndex = 2;
             // 
-            // lblPhysicalRAM
-            // 
-            this.lblPhysicalRAM.AutoSize = true;
-            this.lblPhysicalRAM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPhysicalRAM.Location = new System.Drawing.Point(767, 79);
-            this.lblPhysicalRAM.Name = "lblPhysicalRAM";
-            this.lblPhysicalRAM.Size = new System.Drawing.Size(110, 19);
-            this.lblPhysicalRAM.TabIndex = 4;
-            this.lblPhysicalRAM.Text = "PhysicalRAM";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);

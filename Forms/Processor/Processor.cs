@@ -35,23 +35,62 @@ namespace MultiTaskBase
             CPU_tick.Start();
             cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
 
-            ManagementObjectSearcher mosuc = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
-            foreach(ManagementObject obj in mosuc.Get())
-            {
-                ProcChart.Titles[0].Text = "" + obj["Name"];
-                lblCores.Text = "Cores:\n" + obj["NumberOfCores"];
-                lblLogicalProcs.Text = "Logical Processors:\n" + obj["NumberOfLogicalProcessors"];
-                lblBaseSpeed.Text = "Base Speed:\n" + string.Format("{0:0.00} GHz", Convert.ToInt32(obj["CurrentClockSpeed"])/1000.0);
-                L2 = Convert.ToInt32(obj["L2CacheSize"]);
-                L3 = Convert.ToInt32(obj["L3CacheSize"]); 
-            }
-
             CPU_cache.GetPerCoreCacheSizes(out L1, out L2, out L3);
 
             lblL1cache.Text = "L1 Cache:\n" + string.Format("{0} KB", (L1/1024)*6);
             lblL2cache.Text = "L2 Cache:\n" + string.Format("{0:0.0} KB", (L2 / Math.Pow(1024, 2) * 6) + 0.0);
             lblL3cache.Text = "L3 Cache:\n" + string.Format("{0:0.0} KB", (L3/Math.Pow(1024, 2) * 2) + 0.0);
+            
+            GetCPUInfo(0);
+            GetCPUInfo(1);
+            GetCPUInfo(2);
+            GetCPUInfo(3);
         }
+        
+
+        public TimeSpan UpTime
+        {
+            get
+            {
+                using (var uptime = new PerformanceCounter("System", "System Up Time"))
+                {
+                    uptime.NextValue();       //Call this an extra time before reading its value
+                    return TimeSpan.FromSeconds(uptime.NextValue());
+                }
+            }
+        }
+
+        private void TimerUpTime_Tick(object sender, EventArgs e)
+        {
+            lblUpTime.Text = "Up Time\n" + UpTime.ToString();
+        }
+
+        private void GetCPUInfo(int index)
+        {
+            try
+            {
+                ManagementObjectSearcher mosuc = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+                foreach (ManagementObject obj in mosuc.Get())
+                {
+                    switch (index)
+                    {
+                        case 0: ProcChart.Titles[0].Text = "" + obj["Name"];
+                            break;
+                        case 1: lblCores.Text = "Cores:\n" + obj["NumberOfCores"];
+                            break;
+                        case 2: lblLogicalProcs.Text = "Logical Processors:\n" + obj["NumberOfLogicalProcessors"];
+                            break;
+                        case 3: lblBaseSpeed.Text = "Base Speed:\n" + string.Format("{0:0.00} GHz", Convert.ToInt32(obj["CurrentClockSpeed"])/1000.0);
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void CPU_tick_Tick(object sender, EventArgs e)
         {
