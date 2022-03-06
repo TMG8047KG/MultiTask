@@ -177,10 +177,10 @@ namespace MultiTaskBase
             // lblGitinfo
             // 
             this.lblGitinfo.AutoSize = true;
-            this.lblGitinfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGitinfo.Font = new System.Drawing.Font("Cubano", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGitinfo.Location = new System.Drawing.Point(66, 22);
             this.lblGitinfo.Name = "lblGitinfo";
-            this.lblGitinfo.Size = new System.Drawing.Size(106, 15);
+            this.lblGitinfo.Size = new System.Drawing.Size(100, 16);
             this.lblGitinfo.TabIndex = 1;
             this.lblGitinfo.Text = "by TMG8047KG";
             // 
@@ -299,6 +299,7 @@ namespace MultiTaskBase
             this.Controls.Add(this.FnBar);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.basePanel);
+            this.Font = new System.Drawing.Font("Cubano", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MultiTask";
