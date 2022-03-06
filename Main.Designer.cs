@@ -94,6 +94,7 @@ namespace MultiTaskBase
             this.btnActiveT.TabIndex = 1;
             this.btnActiveT.Text = "Active Time";
             this.btnActiveT.UseVisualStyleBackColor = false;
+            this.btnActiveT.Visible = false;
             this.btnActiveT.Click += new System.EventHandler(this.btnActiveT_Click);
             // 
             // btnRunningApps

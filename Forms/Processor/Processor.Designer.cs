@@ -30,14 +30,14 @@ namespace MultiTaskBase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.CPU_tick = new System.Windows.Forms.Timer(this.components);
             this.ProcChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUtily = new System.Windows.Forms.Label();
             this.ChartLine = new System.Windows.Forms.Panel();
+            this.lblUtily = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblL3cache = new System.Windows.Forms.Label();
             this.lblL2cache = new System.Windows.Forms.Label();
@@ -64,38 +64,38 @@ namespace MultiTaskBase
             // ProcChart
             // 
             this.ProcChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            chartArea3.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea3.AxisX.LabelStyle.Enabled = false;
-            chartArea3.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea3.AxisY.LabelStyle.Enabled = false;
-            chartArea3.AxisY.Maximum = 100D;
-            chartArea3.AxisY.Minimum = 0D;
-            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            chartArea3.Name = "chAreaCPU";
-            this.ProcChart.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisX.LabelStyle.Enabled = false;
+            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.Maximum = 100D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            chartArea1.Name = "chAreaCPU";
+            this.ProcChart.ChartAreas.Add(chartArea1);
             this.ProcChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProcChart.Location = new System.Drawing.Point(0, 0);
             this.ProcChart.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ProcChart.Name = "ProcChart";
-            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(158)))));
-            series3.BorderWidth = 5;
-            series3.ChartArea = "chAreaCPU";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(90)))));
-            series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(123)))));
-            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series3.Name = "CPUchart";
-            this.ProcChart.Series.Add(series3);
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(158)))));
+            series1.BorderWidth = 5;
+            series1.ChartArea = "chAreaCPU";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
+            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(90)))));
+            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(123)))));
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "CPUchart";
+            this.ProcChart.Series.Add(series1);
             this.ProcChart.Size = new System.Drawing.Size(1000, 330);
             this.ProcChart.TabIndex = 11;
             this.ProcChart.Text = "chart1";
-            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title3.IsDockedInsideChartArea = false;
-            title3.Name = "procName";
-            this.ProcChart.Titles.Add(title3);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.IsDockedInsideChartArea = false;
+            title1.Name = "procName";
+            this.ProcChart.Titles.Add(title1);
             // 
             // panel1
             // 
@@ -108,14 +108,6 @@ namespace MultiTaskBase
             this.panel1.Size = new System.Drawing.Size(454, 57);
             this.panel1.TabIndex = 12;
             // 
-            // lblUtily
-            // 
-            this.lblUtily.AutoSize = true;
-            this.lblUtily.Location = new System.Drawing.Point(13, 9);
-            this.lblUtily.Name = "lblUtily";
-            this.lblUtily.Size = new System.Drawing.Size(0, 19);
-            this.lblUtily.TabIndex = 1;
-            // 
             // ChartLine
             // 
             this.ChartLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
@@ -124,6 +116,14 @@ namespace MultiTaskBase
             this.ChartLine.Name = "ChartLine";
             this.ChartLine.Size = new System.Drawing.Size(5, 57);
             this.ChartLine.TabIndex = 0;
+            // 
+            // lblUtily
+            // 
+            this.lblUtily.AutoSize = true;
+            this.lblUtily.Location = new System.Drawing.Point(13, 9);
+            this.lblUtily.Name = "lblUtily";
+            this.lblUtily.Size = new System.Drawing.Size(0, 19);
+            this.lblUtily.TabIndex = 1;
             // 
             // panel3
             // 
