@@ -8,6 +8,10 @@ namespace MultiTaskBase.Forms
 {
     public partial class Application_Usage_Time : Form
     {
+        public int use_Time = 1;
+        public int run_Time = 1;
+
+
         public Application_Usage_Time()
         {
             InitializeComponent();
@@ -17,72 +21,54 @@ namespace MultiTaskBase.Forms
         {
 
         }
-        public string getActiveWindowName()
+        public void getActiveWindowName()
         {
-            string processName;
-            try
-            {
-                var activatedHandle = GetForegroundWindow();
-
+            string processName=""; 
+            var activatedHandle = GetForegroundWindow();
+            try { 
+                run_Time += 1;
                 Process[] processes = Process.GetProcesses();
                 foreach (Process clsProcess in processes)
                 {
-
-                    if (activatedHandle == clsProcess.MainWindowHandle)
+                    timeGrid.Rows.Add(clsProcess.ProcessName, 0, run_Time, 0, 0);
+                    if(activatedHandle == clsProcess.MainWindowHandle)
                     {
                         processName = clsProcess.ProcessName;
-
-                        return processName;
+                        timeGrid.Rows.Add(processName, use_Time, 0, 0, 0);
                     }
                 }
-            }
-            catch { }
-            return null;
 
-            timeGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in timeGrid.Rows)
+                for (int i = 0; i < timeGrid.RowCount - 1; i++)
                 {
-                    if (row.Cells[0].Value.Equals(processName))
+                    var Row = timeGrid.Rows[i];
+                    string rowFields = Row.Cells[0].Value.ToString();
+
+                    for (int j = i + 1; j < timeGrid.RowCount -1; j++)
                     {
-                        row.Selected = true;
-                        break;
+                        var Row2 = timeGrid.Rows[j];
+                        int r1, r2;
+                        string def = Row2.Cells[0].Value.ToString();
+                        if (rowFields == def)
+                        {
+                            Row.Cells[1].Value = (int)Row.Cells[1].Value + (int)Row2.Cells[1].Value;
+                            timeGrid.Rows.Remove(Row2);
+                            j--;
+                        }
                     }
                 }
             }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
+            catch (Exception ex)
+            { 
+                Console.WriteLine(ex.Message); 
             }
         }
-
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         private static extern IntPtr GetForegroundWindow();
-
-        public void fifi()
-        {
-            Process[] proc = Process.GetProcesses();
-            foreach (Process test in proc)
-            {
-                try
-                {
-                    timeGrid.Rows.Add(test.ProcessName, 0, 0, 0, 0);
-                }
-                catch (Win32Exception ex)
-                {
-                    if (ex.NativeErrorCode == 5)
-                    {
-                        continue;
-                    }
-                    throw;
-                }
-            }
-        }
 
 
         private void tick_Tick(object sender, EventArgs e)
         {
+            getActiveWindowName();
         }
     }
 }
