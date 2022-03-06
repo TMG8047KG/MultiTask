@@ -30,9 +30,9 @@ namespace MultiTaskBase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.CPU_tick = new System.Windows.Forms.Timer(this.components);
             this.ProcChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,10 +47,13 @@ namespace MultiTaskBase
             this.lblBaseSpeed = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUpTime = new System.Windows.Forms.Label();
+            this.TimerUpTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProcChart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // CPU_tick
@@ -61,43 +64,44 @@ namespace MultiTaskBase
             // ProcChart
             // 
             this.ProcChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisX.LabelStyle.Enabled = false;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.LabelStyle.Enabled = false;
-            chartArea1.AxisY.Maximum = 100D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            chartArea1.Name = "chAreaCPU";
-            this.ProcChart.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisX.LabelStyle.Enabled = false;
+            chartArea3.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY.LabelStyle.Enabled = false;
+            chartArea3.AxisY.Maximum = 100D;
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            chartArea3.Name = "chAreaCPU";
+            this.ProcChart.ChartAreas.Add(chartArea3);
             this.ProcChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProcChart.Location = new System.Drawing.Point(0, 0);
             this.ProcChart.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ProcChart.Name = "ProcChart";
-            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(158)))));
-            series1.BorderWidth = 5;
-            series1.ChartArea = "chAreaCPU";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
-            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(90)))));
-            series1.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(123)))));
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "CPUchart";
-            this.ProcChart.Series.Add(series1);
+            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(158)))));
+            series3.BorderWidth = 5;
+            series3.ChartArea = "chAreaCPU";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
+            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(90)))));
+            series3.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(123)))));
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series3.Name = "CPUchart";
+            this.ProcChart.Series.Add(series3);
             this.ProcChart.Size = new System.Drawing.Size(1000, 330);
             this.ProcChart.TabIndex = 11;
             this.ProcChart.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title1.IsDockedInsideChartArea = false;
-            title1.Name = "procName";
-            this.ProcChart.Titles.Add(title1);
+            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title3.IsDockedInsideChartArea = false;
+            title3.Name = "procName";
+            this.ProcChart.Titles.Add(title3);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblUtily);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.panel1.Controls.Add(this.ChartLine);
+            this.panel1.Controls.Add(this.lblUtily);
             this.panel1.Location = new System.Drawing.Point(14, 8);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
@@ -107,17 +111,14 @@ namespace MultiTaskBase
             // lblUtily
             // 
             this.lblUtily.AutoSize = true;
-            this.lblUtily.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblUtily.Location = new System.Drawing.Point(5, 0);
+            this.lblUtily.Location = new System.Drawing.Point(13, 9);
             this.lblUtily.Name = "lblUtily";
-            this.lblUtily.Size = new System.Drawing.Size(85, 19);
+            this.lblUtily.Size = new System.Drawing.Size(0, 19);
             this.lblUtily.TabIndex = 1;
-            this.lblUtily.Text = "Utilization\r\n";
             // 
             // ChartLine
             // 
             this.ChartLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(173)))), ((int)(((byte)(194)))));
-            this.ChartLine.Dock = System.Windows.Forms.DockStyle.Left;
             this.ChartLine.Location = new System.Drawing.Point(0, 0);
             this.ChartLine.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ChartLine.Name = "ChartLine";
@@ -144,9 +145,8 @@ namespace MultiTaskBase
             this.lblL3cache.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblL3cache.Location = new System.Drawing.Point(0, 95);
             this.lblL3cache.Name = "lblL3cache";
-            this.lblL3cache.Size = new System.Drawing.Size(78, 19);
+            this.lblL3cache.Size = new System.Drawing.Size(0, 19);
             this.lblL3cache.TabIndex = 5;
-            this.lblL3cache.Text = "L3 cache";
             // 
             // lblL2cache
             // 
@@ -154,9 +154,8 @@ namespace MultiTaskBase
             this.lblL2cache.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblL2cache.Location = new System.Drawing.Point(0, 76);
             this.lblL2cache.Name = "lblL2cache";
-            this.lblL2cache.Size = new System.Drawing.Size(78, 19);
+            this.lblL2cache.Size = new System.Drawing.Size(0, 19);
             this.lblL2cache.TabIndex = 4;
-            this.lblL2cache.Text = "L2 cache";
             // 
             // lblL1cache
             // 
@@ -164,9 +163,8 @@ namespace MultiTaskBase
             this.lblL1cache.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblL1cache.Location = new System.Drawing.Point(0, 57);
             this.lblL1cache.Name = "lblL1cache";
-            this.lblL1cache.Size = new System.Drawing.Size(78, 19);
+            this.lblL1cache.Size = new System.Drawing.Size(0, 19);
             this.lblL1cache.TabIndex = 3;
-            this.lblL1cache.Text = "L1 cache";
             // 
             // lblLogicalProcs
             // 
@@ -174,9 +172,8 @@ namespace MultiTaskBase
             this.lblLogicalProcs.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblLogicalProcs.Location = new System.Drawing.Point(0, 38);
             this.lblLogicalProcs.Name = "lblLogicalProcs";
-            this.lblLogicalProcs.Size = new System.Drawing.Size(157, 19);
+            this.lblLogicalProcs.Size = new System.Drawing.Size(0, 19);
             this.lblLogicalProcs.TabIndex = 1;
-            this.lblLogicalProcs.Text = "Logical Processors";
             // 
             // lblCores
             // 
@@ -184,9 +181,8 @@ namespace MultiTaskBase
             this.lblCores.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblCores.Location = new System.Drawing.Point(0, 19);
             this.lblCores.Name = "lblCores";
-            this.lblCores.Size = new System.Drawing.Size(55, 19);
+            this.lblCores.Size = new System.Drawing.Size(0, 19);
             this.lblCores.TabIndex = 0;
-            this.lblCores.Text = "Cores";
             // 
             // lblBaseSpeed
             // 
@@ -194,9 +190,8 @@ namespace MultiTaskBase
             this.lblBaseSpeed.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblBaseSpeed.Location = new System.Drawing.Point(0, 0);
             this.lblBaseSpeed.Name = "lblBaseSpeed";
-            this.lblBaseSpeed.Size = new System.Drawing.Size(101, 19);
+            this.lblBaseSpeed.Size = new System.Drawing.Size(0, 19);
             this.lblBaseSpeed.TabIndex = 2;
-            this.lblBaseSpeed.Text = "Base Speed";
             // 
             // panel2
             // 
@@ -211,10 +206,27 @@ namespace MultiTaskBase
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.panel4.Controls.Add(this.lblUpTime);
             this.panel4.Location = new System.Drawing.Point(14, 72);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(454, 246);
             this.panel4.TabIndex = 14;
+            // 
+            // lblUpTime
+            // 
+            this.lblUpTime.AutoSize = true;
+            this.lblUpTime.Location = new System.Drawing.Point(3, 206);
+            this.lblUpTime.Name = "lblUpTime";
+            this.lblUpTime.Size = new System.Drawing.Size(9, 19);
+            this.lblUpTime.TabIndex = 2;
+            this.lblUpTime.Text = "\r\n";
+            // 
+            // TimerUpTime
+            // 
+            this.TimerUpTime.Enabled = true;
+            this.TimerUpTime.Interval = 1;
+            this.TimerUpTime.Tick += new System.EventHandler(this.TimerUpTime_Tick);
             // 
             // Processor
             // 
@@ -236,6 +248,8 @@ namespace MultiTaskBase
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +269,7 @@ namespace MultiTaskBase
         private System.Windows.Forms.Label lblCores;
         private System.Windows.Forms.Label lblBaseSpeed;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblUpTime;
+        private System.Windows.Forms.Timer TimerUpTime;
     }
 }
