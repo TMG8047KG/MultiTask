@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
 using System.Diagnostics;
@@ -26,8 +19,8 @@ namespace MultiTaskBase.Forms
             GetInfo("Win32_OperatingSystem", 1);
             GetInfo("Win32_Processor", 2);
             GetInfo("Win32_OperatingSystem", 3);
-            lblDeviceName.Text = "Device name: " + System.Windows.Forms.SystemInformation.ComputerName;
-            
+            GetInfo("Win32_Processor", 4);
+            lblDeviceName.Text = "Device name: " + System.Windows.Forms.SystemInformation.ComputerName; 
         }
 
         public void GetInfo(string CIM, int info)
@@ -51,7 +44,7 @@ namespace MultiTaskBase.Forms
                             }
                         case 1:
                             {
-                                lblProductID.Text = "Product ID: " + (string)obj["SerialNumber"];
+                                lblSerialNumber.Text = "Serial Number: " + (string)obj["SerialNumber"];
                                 break;
                             }
                         case 2:
@@ -73,6 +66,7 @@ namespace MultiTaskBase.Forms
             }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +76,11 @@ namespace MultiTaskBase.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void TimerClock_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("T");
         }
     }
 }

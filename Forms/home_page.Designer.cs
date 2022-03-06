@@ -29,8 +29,10 @@ namespace MultiTaskBase.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblDeviceName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSerialNumber = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,16 +40,17 @@ namespace MultiTaskBase.Forms
             this.lblWversion = new System.Windows.Forms.Label();
             this.lblWedition = new System.Windows.Forms.Label();
             this.lblSystemType = new System.Windows.Forms.Label();
-            this.lblProductID = new System.Windows.Forms.Label();
             this.lblversion = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.TimerClock = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeviceName
             // 
             this.lblDeviceName.AutoSize = true;
-            this.lblDeviceName.Location = new System.Drawing.Point(18, 13);
+            this.lblDeviceName.Location = new System.Drawing.Point(18, 23);
             this.lblDeviceName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceName.Name = "lblDeviceName";
             this.lblDeviceName.Size = new System.Drawing.Size(150, 25);
@@ -57,6 +60,8 @@ namespace MultiTaskBase.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(48)))), ((int)(((byte)(56)))));
+            this.panel1.Controls.Add(this.lblTime);
+            this.panel1.Controls.Add(this.lblSerialNumber);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button1);
@@ -64,19 +69,28 @@ namespace MultiTaskBase.Forms
             this.panel1.Controls.Add(this.lblWversion);
             this.panel1.Controls.Add(this.lblWedition);
             this.panel1.Controls.Add(this.lblSystemType);
-            this.panel1.Controls.Add(this.lblProductID);
             this.panel1.Controls.Add(this.lblDeviceName);
             this.panel1.Font = new System.Drawing.Font("Cubano", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(14, 11);
+            this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 637);
+            this.panel1.Size = new System.Drawing.Size(721, 639);
             this.panel1.TabIndex = 1;
+            // 
+            // lblSerialNumber
+            // 
+            this.lblSerialNumber.AutoSize = true;
+            this.lblSerialNumber.Location = new System.Drawing.Point(18, 59);
+            this.lblSerialNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSerialNumber.Name = "lblSerialNumber";
+            this.lblSerialNumber.Size = new System.Drawing.Size(167, 25);
+            this.lblSerialNumber.TabIndex = 9;
+            this.lblSerialNumber.Text = "Serial Number:";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(100)))), ((int)(((byte)(143)))));
-            this.panel4.Location = new System.Drawing.Point(10, 275);
+            this.panel4.Location = new System.Drawing.Point(10, 269);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(700, 5);
             this.panel4.TabIndex = 8;
@@ -84,7 +98,7 @@ namespace MultiTaskBase.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(100)))), ((int)(((byte)(143)))));
-            this.panel2.Location = new System.Drawing.Point(10, 121);
+            this.panel2.Location = new System.Drawing.Point(10, 131);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(700, 3);
             this.panel2.TabIndex = 7;
@@ -117,7 +131,7 @@ namespace MultiTaskBase.Forms
             // lblWversion
             // 
             this.lblWversion.AutoSize = true;
-            this.lblWversion.Location = new System.Drawing.Point(18, 198);
+            this.lblWversion.Location = new System.Drawing.Point(18, 196);
             this.lblWversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWversion.Name = "lblWversion";
             this.lblWversion.Size = new System.Drawing.Size(198, 25);
@@ -127,7 +141,7 @@ namespace MultiTaskBase.Forms
             // lblWedition
             // 
             this.lblWedition.AutoSize = true;
-            this.lblWedition.Location = new System.Drawing.Point(18, 164);
+            this.lblWedition.Location = new System.Drawing.Point(18, 160);
             this.lblWedition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWedition.Name = "lblWedition";
             this.lblWedition.Size = new System.Drawing.Size(186, 25);
@@ -137,22 +151,12 @@ namespace MultiTaskBase.Forms
             // lblSystemType
             // 
             this.lblSystemType.AutoSize = true;
-            this.lblSystemType.Location = new System.Drawing.Point(18, 80);
+            this.lblSystemType.Location = new System.Drawing.Point(18, 95);
             this.lblSystemType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSystemType.Name = "lblSystemType";
             this.lblSystemType.Size = new System.Drawing.Size(157, 25);
             this.lblSystemType.TabIndex = 2;
             this.lblSystemType.Text = "System type: ";
-            // 
-            // lblProductID
-            // 
-            this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(18, 47);
-            this.lblProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(126, 25);
-            this.lblProductID.TabIndex = 1;
-            this.lblProductID.Text = "Product ID:";
             // 
             // lblversion
             // 
@@ -173,6 +177,22 @@ namespace MultiTaskBase.Forms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(247, 247);
             this.panel3.TabIndex = 7;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Cubano", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(6, 613);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(81, 19);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "hh:mm:ss";
+            // 
+            // TimerClock
+            // 
+            this.TimerClock.Enabled = true;
+            this.TimerClock.Interval = 1;
+            this.TimerClock.Tick += new System.EventHandler(this.TimerClock_Tick);
             // 
             // home_page
             // 
@@ -205,10 +225,12 @@ namespace MultiTaskBase.Forms
         private System.Windows.Forms.Label lblWversion;
         private System.Windows.Forms.Label lblWedition;
         private System.Windows.Forms.Label lblSystemType;
-        private System.Windows.Forms.Label lblProductID;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblSerialNumber;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer TimerClock;
     }
 }
