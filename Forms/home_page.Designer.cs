@@ -29,105 +29,161 @@ namespace MultiTaskBase.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPCname = new System.Windows.Forms.Label();
+            this.lblDeviceName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblSysType = new System.Windows.Forms.Label();
-            this.lblPCID = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblOSbuild = new System.Windows.Forms.Label();
+            this.lblWversion = new System.Windows.Forms.Label();
+            this.lblWedition = new System.Windows.Forms.Label();
+            this.lblSystemType = new System.Windows.Forms.Label();
+            this.lblProductID = new System.Windows.Forms.Label();
             this.lblversion = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblPCname
+            // lblDeviceName
             // 
-            this.lblPCname.AutoSize = true;
-            this.lblPCname.Location = new System.Drawing.Point(16, 14);
-            this.lblPCname.Name = "lblPCname";
-            this.lblPCname.Size = new System.Drawing.Size(180, 25);
-            this.lblPCname.TabIndex = 0;
-            this.lblPCname.Text = "Device name: TMPC";
+            this.lblDeviceName.AutoSize = true;
+            this.lblDeviceName.Location = new System.Drawing.Point(18, 13);
+            this.lblDeviceName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeviceName.Name = "lblDeviceName";
+            this.lblDeviceName.Size = new System.Drawing.Size(150, 25);
+            this.lblDeviceName.TabIndex = 0;
+            this.lblDeviceName.Text = "Device name: ";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(48)))), ((int)(((byte)(56)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblSysType);
-            this.panel1.Controls.Add(this.lblPCID);
-            this.panel1.Controls.Add(this.lblPCname);
-            this.panel1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lblOSbuild);
+            this.panel1.Controls.Add(this.lblWversion);
+            this.panel1.Controls.Add(this.lblWedition);
+            this.panel1.Controls.Add(this.lblSystemType);
+            this.panel1.Controls.Add(this.lblProductID);
+            this.panel1.Controls.Add(this.lblDeviceName);
+            this.panel1.Font = new System.Drawing.Font("Cubano", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(14, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(663, 636);
+            this.panel1.Size = new System.Drawing.Size(720, 637);
             this.panel1.TabIndex = 1;
             // 
-            // label5
+            // panel4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "OS build: 22000.527";
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(100)))), ((int)(((byte)(143)))));
+            this.panel4.Location = new System.Drawing.Point(10, 275);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(700, 5);
+            this.panel4.TabIndex = 8;
             // 
-            // label4
+            // panel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Windows version: 21H2";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(100)))), ((int)(((byte)(143)))));
+            this.panel2.Location = new System.Drawing.Point(10, 121);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 3);
+            this.panel2.TabIndex = 7;
             // 
-            // label3
+            // button1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Windows Editon: Windows 11 Pro";
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(79)))), ((int)(((byte)(120)))));
+            this.button1.Location = new System.Drawing.Point(590, 600);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 32);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Device Manager";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblSysType
+            // lblOSbuild
             // 
-            this.lblSysType.AutoSize = true;
-            this.lblSysType.Location = new System.Drawing.Point(16, 84);
-            this.lblSysType.Name = "lblSysType";
-            this.lblSysType.Size = new System.Drawing.Size(518, 25);
-            this.lblSysType.TabIndex = 2;
-            this.lblSysType.Text = "System type: 64-bit operating system, x64-based processor";
+            this.lblOSbuild.AutoSize = true;
+            this.lblOSbuild.Location = new System.Drawing.Point(18, 232);
+            this.lblOSbuild.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOSbuild.Name = "lblOSbuild";
+            this.lblOSbuild.Size = new System.Drawing.Size(107, 25);
+            this.lblOSbuild.TabIndex = 5;
+            this.lblOSbuild.Text = "OS build: ";
             // 
-            // lblPCID
+            // lblWversion
             // 
-            this.lblPCID.AutoSize = true;
-            this.lblPCID.Location = new System.Drawing.Point(16, 49);
-            this.lblPCID.Name = "lblPCID";
-            this.lblPCID.Size = new System.Drawing.Size(466, 25);
-            this.lblPCID.TabIndex = 1;
-            this.lblPCID.Text = "Device ID: 0258A10E-33CE-4D0D-9A59-623ABC03B190";
+            this.lblWversion.AutoSize = true;
+            this.lblWversion.Location = new System.Drawing.Point(18, 198);
+            this.lblWversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWversion.Name = "lblWversion";
+            this.lblWversion.Size = new System.Drawing.Size(198, 25);
+            this.lblWversion.TabIndex = 4;
+            this.lblWversion.Text = "Windows version: ";
+            // 
+            // lblWedition
+            // 
+            this.lblWedition.AutoSize = true;
+            this.lblWedition.Location = new System.Drawing.Point(18, 164);
+            this.lblWedition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWedition.Name = "lblWedition";
+            this.lblWedition.Size = new System.Drawing.Size(186, 25);
+            this.lblWedition.TabIndex = 3;
+            this.lblWedition.Text = "Windows Editon: ";
+            // 
+            // lblSystemType
+            // 
+            this.lblSystemType.AutoSize = true;
+            this.lblSystemType.Location = new System.Drawing.Point(18, 80);
+            this.lblSystemType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSystemType.Name = "lblSystemType";
+            this.lblSystemType.Size = new System.Drawing.Size(157, 25);
+            this.lblSystemType.TabIndex = 2;
+            this.lblSystemType.Text = "System type: ";
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(18, 47);
+            this.lblProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(126, 25);
+            this.lblProductID.TabIndex = 1;
+            this.lblProductID.Text = "Product ID:";
             // 
             // lblversion
             // 
             this.lblversion.AutoSize = true;
             this.lblversion.ForeColor = System.Drawing.Color.Gray;
-            this.lblversion.Location = new System.Drawing.Point(920, 631);
+            this.lblversion.Location = new System.Drawing.Point(903, 632);
+            this.lblversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblversion.Name = "lblversion";
-            this.lblversion.Size = new System.Drawing.Size(68, 20);
+            this.lblversion.Size = new System.Drawing.Size(84, 19);
             this.lblversion.TabIndex = 6;
             this.lblversion.Text = "1.0.0 beta";
             // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::MultiTaskBase.Properties.Resources._264833419_4639386566115027_6923715813496419059_n;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(741, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(247, 247);
+            this.panel3.TabIndex = 7;
+            // 
             // home_page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1000, 660);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblversion);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Cubano", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "home_page";
@@ -142,13 +198,17 @@ namespace MultiTaskBase.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label lblPCname;
+        private System.Windows.Forms.Label lblDeviceName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblversion;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblSysType;
-        private System.Windows.Forms.Label lblPCID;
+        private System.Windows.Forms.Label lblOSbuild;
+        private System.Windows.Forms.Label lblWversion;
+        private System.Windows.Forms.Label lblWedition;
+        private System.Windows.Forms.Label lblSystemType;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
