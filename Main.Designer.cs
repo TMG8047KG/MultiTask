@@ -40,14 +40,14 @@ namespace MultiTaskBase
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblGitinfo = new System.Windows.Forms.Label();
-            this.btnGit = new System.Windows.Forms.Button();
-            this.logoPanel = new System.Windows.Forms.Panel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.FnBar = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnGit = new System.Windows.Forms.Button();
+            this.logoPanel = new System.Windows.Forms.Panel();
             this.basePanel.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,13 +86,14 @@ namespace MultiTaskBase
             this.btnActiveT.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnActiveT.FlatAppearance.BorderSize = 0;
             this.btnActiveT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActiveT.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnActiveT.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActiveT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnActiveT.Location = new System.Drawing.Point(0, 240);
             this.btnActiveT.Name = "btnActiveT";
             this.btnActiveT.Size = new System.Drawing.Size(200, 60);
             this.btnActiveT.TabIndex = 1;
             this.btnActiveT.Text = "Active Time";
+            this.btnActiveT.UseCompatibleTextRendering = true;
             this.btnActiveT.UseVisualStyleBackColor = false;
             this.btnActiveT.Visible = false;
             this.btnActiveT.Click += new System.EventHandler(this.btnActiveT_Click);
@@ -103,13 +104,14 @@ namespace MultiTaskBase
             this.btnRunningApps.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRunningApps.FlatAppearance.BorderSize = 0;
             this.btnRunningApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunningApps.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRunningApps.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunningApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnRunningApps.Location = new System.Drawing.Point(0, 180);
             this.btnRunningApps.Name = "btnRunningApps";
             this.btnRunningApps.Size = new System.Drawing.Size(200, 60);
             this.btnRunningApps.TabIndex = 0;
             this.btnRunningApps.Text = "Processes";
+            this.btnRunningApps.UseCompatibleTextRendering = true;
             this.btnRunningApps.UseVisualStyleBackColor = false;
             this.btnRunningApps.Click += new System.EventHandler(this.btnRunningApps_Click);
             // 
@@ -120,7 +122,7 @@ namespace MultiTaskBase
             this.btnCPU.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCPU.FlatAppearance.BorderSize = 0;
             this.btnCPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCPU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCPU.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCPU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnCPU.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCPU.ImageKey = "(none)";
@@ -130,6 +132,7 @@ namespace MultiTaskBase
             this.btnCPU.TabIndex = 3;
             this.btnCPU.Text = "CPU";
             this.btnCPU.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCPU.UseCompatibleTextRendering = true;
             this.btnCPU.UseVisualStyleBackColor = false;
             this.btnCPU.Click += new System.EventHandler(this.btnCPU_Click);
             // 
@@ -139,13 +142,14 @@ namespace MultiTaskBase
             this.btnMem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMem.FlatAppearance.BorderSize = 0;
             this.btnMem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnMem.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btnMem.Location = new System.Drawing.Point(0, 60);
             this.btnMem.Name = "btnMem";
             this.btnMem.Size = new System.Drawing.Size(200, 60);
             this.btnMem.TabIndex = 2;
             this.btnMem.Text = "Memory";
+            this.btnMem.UseCompatibleTextRendering = true;
             this.btnMem.UseVisualStyleBackColor = false;
             this.btnMem.Click += new System.EventHandler(this.btnMem_Click);
             // 
@@ -155,13 +159,14 @@ namespace MultiTaskBase
             this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Home.FlatAppearance.BorderSize = 0;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Home.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.btn_Home.Location = new System.Drawing.Point(0, 0);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(200, 60);
             this.btn_Home.TabIndex = 4;
             this.btn_Home.Text = "Home";
+            this.btn_Home.UseCompatibleTextRendering = true;
             this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
@@ -185,34 +190,6 @@ namespace MultiTaskBase
             this.lblGitinfo.TabIndex = 1;
             this.lblGitinfo.Text = "by TMG8047KG";
             // 
-            // btnGit
-            // 
-            this.btnGit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGit.BackgroundImage")));
-            this.btnGit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnGit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnGit.FlatAppearance.BorderSize = 0;
-            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGit.Location = new System.Drawing.Point(0, 0);
-            this.btnGit.Name = "btnGit";
-            this.btnGit.Size = new System.Drawing.Size(60, 60);
-            this.btnGit.TabIndex = 0;
-            this.btnGit.UseVisualStyleBackColor = false;
-            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
-            // 
-            // logoPanel
-            // 
-            this.logoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
-            this.logoPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPanel.BackgroundImage")));
-            this.logoPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logoPanel.Location = new System.Drawing.Point(0, 0);
-            this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(200, 108);
-            this.logoPanel.TabIndex = 0;
-            this.logoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
-            this.logoPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
-            this.logoPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
-            // 
             // notifyIcon
             // 
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
@@ -233,6 +210,16 @@ namespace MultiTaskBase
             this.FnBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
             this.FnBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
             this.FnBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainPanel.Location = new System.Drawing.Point(200, 40);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1000, 660);
+            this.mainPanel.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -280,15 +267,33 @@ namespace MultiTaskBase
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // mainPanel
+            // btnGit
             // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainPanel.Location = new System.Drawing.Point(200, 40);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1000, 660);
-            this.mainPanel.TabIndex = 2;
+            this.btnGit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGit.BackgroundImage")));
+            this.btnGit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGit.FlatAppearance.BorderSize = 0;
+            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGit.Location = new System.Drawing.Point(0, 0);
+            this.btnGit.Name = "btnGit";
+            this.btnGit.Size = new System.Drawing.Size(60, 60);
+            this.btnGit.TabIndex = 0;
+            this.btnGit.UseVisualStyleBackColor = false;
+            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
+            this.logoPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoPanel.BackgroundImage")));
+            this.logoPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(200, 108);
+            this.logoPanel.TabIndex = 0;
+            this.logoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseDown);
+            this.logoPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseMove);
+            this.logoPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FnBar_MouseUp);
             // 
             // MultiTask
             // 

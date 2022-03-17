@@ -30,30 +30,34 @@ namespace MultiTaskBase.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_page));
             this.lblDeviceName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.lblSerialNumber = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.lblOSbuild = new System.Windows.Forms.Label();
-            this.lblWversion = new System.Windows.Forms.Label();
             this.lblWedition = new System.Windows.Forms.Label();
             this.lblSystemType = new System.Windows.Forms.Label();
             this.lblversion = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
             this.TimerClock = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDeviceName
             // 
             this.lblDeviceName.AutoSize = true;
+            this.lblDeviceName.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeviceName.Location = new System.Drawing.Point(18, 23);
             this.lblDeviceName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeviceName.Name = "lblDeviceName";
-            this.lblDeviceName.Size = new System.Drawing.Size(150, 25);
+            this.lblDeviceName.Size = new System.Drawing.Size(136, 23);
             this.lblDeviceName.TabIndex = 0;
             this.lblDeviceName.Text = "Device name: ";
             // 
@@ -66,7 +70,6 @@ namespace MultiTaskBase.Forms
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblOSbuild);
-            this.panel1.Controls.Add(this.lblWversion);
             this.panel1.Controls.Add(this.lblWedition);
             this.panel1.Controls.Add(this.lblSystemType);
             this.panel1.Controls.Add(this.lblDeviceName);
@@ -74,23 +77,34 @@ namespace MultiTaskBase.Forms
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(721, 639);
+            this.panel1.Size = new System.Drawing.Size(721, 636);
             this.panel1.TabIndex = 1;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(6, 607);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(94, 23);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "hh:mm:ss";
             // 
             // lblSerialNumber
             // 
             this.lblSerialNumber.AutoSize = true;
+            this.lblSerialNumber.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSerialNumber.Location = new System.Drawing.Point(18, 59);
             this.lblSerialNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSerialNumber.Name = "lblSerialNumber";
-            this.lblSerialNumber.Size = new System.Drawing.Size(167, 25);
+            this.lblSerialNumber.Size = new System.Drawing.Size(151, 23);
             this.lblSerialNumber.TabIndex = 9;
             this.lblSerialNumber.Text = "Serial Number:";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(100)))), ((int)(((byte)(143)))));
-            this.panel4.Location = new System.Drawing.Point(10, 269);
+            this.panel4.Location = new System.Drawing.Point(10, 232);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(700, 5);
             this.panel4.TabIndex = 8;
@@ -107,12 +121,12 @@ namespace MultiTaskBase.Forms
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Doppio One", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(79)))), ((int)(((byte)(120)))));
-            this.button1.Location = new System.Drawing.Point(590, 600);
+            this.button1.Location = new System.Drawing.Point(576, 601);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 32);
+            this.button1.Size = new System.Drawing.Size(141, 32);
             this.button1.TabIndex = 6;
             this.button1.Text = "Device Manager";
             this.button1.UseVisualStyleBackColor = true;
@@ -121,40 +135,33 @@ namespace MultiTaskBase.Forms
             // lblOSbuild
             // 
             this.lblOSbuild.AutoSize = true;
-            this.lblOSbuild.Location = new System.Drawing.Point(18, 232);
+            this.lblOSbuild.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOSbuild.Location = new System.Drawing.Point(18, 196);
             this.lblOSbuild.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOSbuild.Name = "lblOSbuild";
-            this.lblOSbuild.Size = new System.Drawing.Size(107, 25);
+            this.lblOSbuild.Size = new System.Drawing.Size(97, 23);
             this.lblOSbuild.TabIndex = 5;
             this.lblOSbuild.Text = "OS build: ";
-            // 
-            // lblWversion
-            // 
-            this.lblWversion.AutoSize = true;
-            this.lblWversion.Location = new System.Drawing.Point(18, 196);
-            this.lblWversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWversion.Name = "lblWversion";
-            this.lblWversion.Size = new System.Drawing.Size(198, 25);
-            this.lblWversion.TabIndex = 4;
-            this.lblWversion.Text = "Windows version: ";
             // 
             // lblWedition
             // 
             this.lblWedition.AutoSize = true;
+            this.lblWedition.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWedition.Location = new System.Drawing.Point(18, 160);
             this.lblWedition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWedition.Name = "lblWedition";
-            this.lblWedition.Size = new System.Drawing.Size(186, 25);
+            this.lblWedition.Size = new System.Drawing.Size(168, 23);
             this.lblWedition.TabIndex = 3;
             this.lblWedition.Text = "Windows Editon: ";
             // 
             // lblSystemType
             // 
             this.lblSystemType.AutoSize = true;
+            this.lblSystemType.Font = new System.Drawing.Font("Cubano", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSystemType.Location = new System.Drawing.Point(18, 95);
             this.lblSystemType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSystemType.Name = "lblSystemType";
-            this.lblSystemType.Size = new System.Drawing.Size(157, 25);
+            this.lblSystemType.Size = new System.Drawing.Size(141, 23);
             this.lblSystemType.TabIndex = 2;
             this.lblSystemType.Text = "System type: ";
             // 
@@ -162,37 +169,38 @@ namespace MultiTaskBase.Forms
             // 
             this.lblversion.AutoSize = true;
             this.lblversion.ForeColor = System.Drawing.Color.Gray;
-            this.lblversion.Location = new System.Drawing.Point(903, 632);
+            this.lblversion.Location = new System.Drawing.Point(894, 632);
             this.lblversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblversion.Name = "lblversion";
-            this.lblversion.Size = new System.Drawing.Size(84, 19);
+            this.lblversion.Size = new System.Drawing.Size(93, 19);
             this.lblversion.TabIndex = 6;
-            this.lblversion.Text = "1.0.0 beta";
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::MultiTaskBase.Properties.Resources._264833419_4639386566115027_6923715813496419059_n;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(741, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(247, 247);
-            this.panel3.TabIndex = 7;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Cubano", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(6, 613);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(81, 19);
-            this.lblTime.TabIndex = 8;
-            this.lblTime.Text = "hh:mm:ss";
+            this.lblversion.Text = "Alpha 1.0.0";
             // 
             // TimerClock
             // 
             this.TimerClock.Enabled = true;
             this.TimerClock.Interval = 1;
             this.TimerClock.Tick += new System.EventHandler(this.TimerClock_Tick);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(741, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(247, 247);
+            this.panel3.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(247, 247);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // home_page
             // 
@@ -211,6 +219,8 @@ namespace MultiTaskBase.Forms
             this.Load += new System.EventHandler(this.home_page_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +232,6 @@ namespace MultiTaskBase.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblversion;
         private System.Windows.Forms.Label lblOSbuild;
-        private System.Windows.Forms.Label lblWversion;
         private System.Windows.Forms.Label lblWedition;
         private System.Windows.Forms.Label lblSystemType;
         private System.Windows.Forms.Button button1;
@@ -232,5 +241,6 @@ namespace MultiTaskBase.Forms
         private System.Windows.Forms.Label lblSerialNumber;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer TimerClock;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
