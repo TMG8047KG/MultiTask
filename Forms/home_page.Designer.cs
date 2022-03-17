@@ -169,12 +169,12 @@ namespace MultiTaskBase.Forms
             // 
             this.lblversion.AutoSize = true;
             this.lblversion.ForeColor = System.Drawing.Color.Gray;
-            this.lblversion.Location = new System.Drawing.Point(894, 632);
+            this.lblversion.Location = new System.Drawing.Point(885, 632);
             this.lblversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblversion.Name = "lblversion";
-            this.lblversion.Size = new System.Drawing.Size(93, 19);
+            this.lblversion.Size = new System.Drawing.Size(102, 19);
             this.lblversion.TabIndex = 6;
-            this.lblversion.Text = "Alpha 1.0.0";
+            this.lblversion.Text = "v1.0.0 alpha";
             // 
             // TimerClock
             // 
