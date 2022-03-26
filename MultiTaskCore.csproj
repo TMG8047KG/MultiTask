@@ -49,6 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
@@ -78,6 +81,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Local\data\DataSaver.cs" />
+    <Compile Include="Local\data\DataSaver.Processor.cs" />
+    <Compile Include="Local\processor\WMIprocessor.cs" />
+    <Compile Include="Pre_Load.cs" />
     <Compile Include="Forms\Application_Usage_Time.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +97,7 @@
     <Compile Include="Forms\home_page.Designer.cs">
       <DependentUpon>home_page.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Processor\CPU_cache.cs" />
+    <Compile Include="Local\processor\Cache.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,10 +110,10 @@
     <Compile Include="Forms\Memory.Designer.cs">
       <DependentUpon>Memory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Processor\Processor.cs">
+    <Compile Include="Forms\Processor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Processor\Processor.Designer.cs">
+    <Compile Include="Forms\Processor.Designer.cs">
       <DependentUpon>Processor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -140,7 +147,7 @@
     <EmbeddedResource Include="Forms\Memory.resx">
       <DependentUpon>Memory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Processor\Processor.resx">
+    <EmbeddedResource Include="Forms\Processor.resx">
       <DependentUpon>Processor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectInstaller.resx">
@@ -188,5 +195,6 @@
   <ItemGroup>
     <None Include="Resources\gifche.gif" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,6 +37,7 @@ namespace MultiTaskBase
             this.MemChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblFormFactor = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@ namespace MultiTaskBase
             this.lblUsedRAM = new System.Windows.Forms.Label();
             this.lblAvaliableRAM = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.MemChart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,6 +123,14 @@ namespace MultiTaskBase
             this.panel2.Size = new System.Drawing.Size(1000, 328);
             this.panel2.TabIndex = 3;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.panel6.Location = new System.Drawing.Point(14, 76);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(316, 238);
+            this.panel6.TabIndex = 12;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lblFormFactor);
@@ -196,14 +204,6 @@ namespace MultiTaskBase
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(6, 60);
             this.panel5.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.panel6.Location = new System.Drawing.Point(14, 76);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(316, 238);
-            this.panel6.TabIndex = 12;
             // 
             // RAM
             // 

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MultiTaskBase.Forms.Processor
+namespace MultiTaskBase.Local.processor
 {
-    public class CPU_cache
+    public class Cache
     {
         [DllImport("kernel32.dll")]
         public static extern int GetCurrentThreadId();
@@ -147,10 +143,10 @@ namespace MultiTaskBase.Forms.Processor
             L2 = 0;
             L3 = 0;
 
-            var info = CPU_cache.LogicalProcessorInformation;
+            var info = Cache.LogicalProcessorInformation;
             foreach (var entry in info)
             {
-                if (entry.Relationship != CPU_cache.LOGICAL_PROCESSOR_RELATIONSHIP.RelationCache)
+                if (entry.Relationship != Cache.LOGICAL_PROCESSOR_RELATIONSHIP.RelationCache)
                     continue;
                 Int64 mask = (Int64)entry.ProcessorMask;
                 if ((mask & (Int64)1) == 0)

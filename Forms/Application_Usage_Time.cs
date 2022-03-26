@@ -36,25 +36,26 @@ namespace MultiTaskBase.Forms
                     }
                 }
             }
-            catch { }
+            catch {  }
             return null;
 
-            timeGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in timeGrid.Rows)
-                {
-                    if (row.Cells[0].Value.Equals(processName))
-                    {
-                        row.Selected = true;
-                        break;
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            //timeGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //try
+            //{
+            //    foreach (DataGridViewRow row in timeGrid.Rows)
+            //    {
+            //        if (row.Cells[0].Value.Equals(processName))
+            //        {
+            //            row.Selected = true;
+            //            break;
+            //        }
+            //    }
+            //}
+            //catch (Exception exc)
+            //{
+            //    MessageBox.Show(exc.Message);
+            //}
+            //return null;
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]

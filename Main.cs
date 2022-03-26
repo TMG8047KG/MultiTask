@@ -12,6 +12,8 @@ namespace MultiTaskBase
     {
         public MultiTask()
         {
+            DataSaver ds = new DataSaver();
+            ds.WriteJson();
             InitializeComponent();
         }
 
